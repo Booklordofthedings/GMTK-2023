@@ -5,14 +5,15 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Background" type="Node2D" parent="." node_paths=PackedStringArray("element1")]
+[node name="Background" type="Node2D" parent="." node_paths=PackedStringArray("fst", "lst")]
 script = ExtResource("1_dhik0")
-speed = 20.675
-element1 = NodePath("1")
+fst = NodePath("1")
+lst = NodePath("2")
 
 [node name="2" type="Sprite2D" parent="Background"]
-position = Vector2(-960, 540)
+position = Vector2(-1920, 0)
 texture = ExtResource("1_h861k")
+centered = false
 
 [node name="1" type="Sprite2D" parent="Background"]
 texture = ExtResource("1_h861k")
