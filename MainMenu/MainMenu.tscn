@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://djy1vaskqd7ek"]
+[gd_scene load_steps=8 format=3 uid="uid://djy1vaskqd7ek"]
 
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://MainMenu/fonts/Geizer.otf" id="1_cckwp"]
 [ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Backgrounds/bg_2.png" id="1_i56vn"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://MainMenu/fonts/Nohemi-Medium.ttf" id="3_4134v"]
 [ext_resource type="Texture2D" uid="uid://c2vddax8hmsy2" path="res://MainMenu/GMTK-White@2000.png" id="3_hf1el"]
-[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Backgrounds/bg_2.png" id="4_5wifn"]
+[ext_resource type="Script" path="res://MainMenu/scripts/fullscreen.cs" id="4_r7g4k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1im3j"]
 line_spacing = 1.0
@@ -28,10 +28,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_i56vn")
+expand_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 show_behind_parent = true
@@ -66,8 +70,8 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -183.0
-offset_right = 183.0
+offset_left = -325.0
+offset_right = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 150
@@ -123,6 +127,7 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("3_4134v")
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
+script = ExtResource("4_r7g4k")
 
 [node name="End" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -149,3 +154,5 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("3_hf1el")
 expand_mode = 1
+
+[connection signal="toggled" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" method="ToggleFullscreen"]
