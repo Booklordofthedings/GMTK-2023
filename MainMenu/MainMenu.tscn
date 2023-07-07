@@ -18,11 +18,10 @@ bg_color = Color(0.259294, 0.259294, 0.259294, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1760.0
-offset_bottom = 990.0
+anchor_right = 12.0
+anchor_bottom = 12.0
+offset_right = -0.00012207
+offset_bottom = -0.00012207
 grow_horizontal = 2
 grow_vertical = 2
 
