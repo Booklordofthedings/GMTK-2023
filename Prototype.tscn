@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkxg2sxvtx385"]
+
+[ext_resource type="Script" path="res://Background.cs" id="1_dhik0"]
+[ext_resource type="Texture2D" uid="uid://b4pbf5te63lqu" path="res://Backgrounds/bg_1.png" id="1_h861k"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="." node_paths=PackedStringArray("element1")]
+script = ExtResource("1_dhik0")
+speed = 20.675
+element1 = NodePath("1")
+
+[node name="2" type="Sprite2D" parent="Background"]
+position = Vector2(-960, 540)
+texture = ExtResource("1_h861k")
+
+[node name="1" type="Sprite2D" parent="Background"]
+texture = ExtResource("1_h861k")
+centered = false
