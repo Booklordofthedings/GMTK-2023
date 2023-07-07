@@ -30,17 +30,17 @@ public partial class Background : Node2D
 		lst.Position = MoveWithSpeed(lst,delta);
 		if(first)
 		{
-				if(lst.Position.X >= start)
+				if(fst.Position.X <= start)
 				{
-					fst.Position = new Vector2(end,lst.Position.Y);
+					lst.Position = new Vector2(end,lst.Position.Y);
 					first = false;
 				}
 		}
 		else
 		{
-				if(fst.Position.X >= start)
+				if(lst.Position.X <= start)
 				{
-					lst.Position = new Vector2(end,fst.Position.Y);
+					fst.Position = new Vector2(end,fst.Position.Y);
 					first = true;
 				}
 		}
@@ -50,6 +50,6 @@ public partial class Background : Node2D
 	
 	private Vector2 MoveWithSpeed(Node2D pVar, double delta)
 	{
-		return new Vector2(pVar.Position.X + ScrollSpeed * (float)delta,pVar.Position.Y);
+		return new Vector2(pVar.Position.X - ScrollSpeed * (float)delta,pVar.Position.Y);
 	}
 }
