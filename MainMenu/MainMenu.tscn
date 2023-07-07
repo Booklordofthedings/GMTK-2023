@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://djy1vaskqd7ek"]
+[gd_scene load_steps=6 format=3 uid="uid://djy1vaskqd7ek"]
 
-[ext_resource type="FontFile" uid="uid://r7ei6q3lvbeq" path="res://MainMenu/Deutsch.ttf" id="1_x1emo"]
-[ext_resource type="Texture2D" uid="uid://cqyr4qqktq2u5" path="res://MainMenu/jamlogo2023.png" id="2_lhy1d"]
+[ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://MainMenu/fonts/Geizer.otf" id="1_cckwp"]
+[ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://MainMenu/fonts/Nohemi-Medium.ttf" id="3_4134v"]
+[ext_resource type="Texture2D" uid="uid://c2vddax8hmsy2" path="res://MainMenu/GMTK-White@2000.png" id="3_hf1el"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1im3j"]
-font = ExtResource("1_x1emo")
+line_spacing = 1.0
+font = ExtResource("1_cckwp")
 font_size = 160
-font_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+font_color = Color(0.0980392, 0.0980392, 0.0901961, 1)
+shadow_size = 20
+shadow_color = Color(0.0901961, 0.0901961, 0.113725, 0.0745098)
+shadow_offset = Vector2(20, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qbmu"]
+bg_color = Color(0.259294, 0.259294, 0.259294, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -32,10 +40,13 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_4134v")
+theme_override_font_sizes/font_size = 25
 text = "Made by:
 Jannis
 Fabio
-Leon"
+Leon
+Johannes"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,7 +58,7 @@ offset_left = -183.0
 offset_right = 183.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 80
+theme_override_constants/margin_top = 150
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -57,24 +68,29 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "Death Game"
 label_settings = SubResource("LabelSettings_1im3j")
+vertical_alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 180
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_constants/separation = 8
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4134v")
 theme_override_font_sizes/font_size = 40
 text = "Start
 "
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4134v")
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 
@@ -83,6 +99,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
@@ -90,10 +107,16 @@ text = "Fullscreen"
 [node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("3_4134v")
+theme_override_font_sizes/font_size = 40
+text = "Fullscreen"
 
 [node name="End" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_4134v")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_1qbmu")
 text = "Quit
 "
 
@@ -104,8 +127,11 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -500.0
-offset_top = -274.0
+offset_left = -131.0
+offset_top = -151.0
+offset_right = -16.0
+offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("2_lhy1d")
+texture = ExtResource("3_hf1el")
+expand_mode = 1

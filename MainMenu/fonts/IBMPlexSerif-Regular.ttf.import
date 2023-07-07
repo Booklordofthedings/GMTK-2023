@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://r7ei6q3lvbeq"
-path="res://.godot/imported/Deutsch.ttf-96c8eab255c9247983d187c1068f5710.fontdata"
+uid="uid://djkw1qmc1fi0m"
+path="res://.godot/imported/IBMPlexSerif-Regular.ttf-72ada1c48ef9d90d6772c107e83af9a3.fontdata"
 
 [deps]
 
-source_file="res://MainMenu/Deutsch.ttf"
-dest_files=["res://.godot/imported/Deutsch.ttf-96c8eab255c9247983d187c1068f5710.fontdata"]
+source_file="res://MainMenu/fonts/IBMPlexSerif-Regular.ttf"
+dest_files=["res://.godot/imported/IBMPlexSerif-Regular.ttf-72ada1c48ef9d90d6772c107e83af9a3.fontdata"]
 
 [params]
 
