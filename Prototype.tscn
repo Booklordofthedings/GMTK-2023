@@ -11,7 +11,7 @@ script = ExtResource("1_dhik0")
 fst = NodePath("1")
 lst = NodePath("2")
 
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
+[node name="BackgroundImages" type="Sprite2D" parent="Background"]
 texture = ExtResource("2_ls5fm")
 centered = false
 
