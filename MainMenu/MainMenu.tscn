@@ -1,6 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://djy1vaskqd7ek"]
 
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://MainMenu/fonts/Geizer.otf" id="1_cckwp"]
+[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Backgrounds/bg_2.png" id="1_i56vn"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://MainMenu/fonts/Nohemi-Medium.ttf" id="3_4134v"]
 [ext_resource type="Texture2D" uid="uid://c2vddax8hmsy2" path="res://MainMenu/GMTK-White@2000.png" id="3_hf1el"]
 [ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Backgrounds/bg_2.png" id="4_5wifn"]
@@ -27,11 +28,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-show_behind_parent = true
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("4_5wifn")
+texture = ExtResource("1_i56vn")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 show_behind_parent = true
