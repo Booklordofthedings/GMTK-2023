@@ -98,6 +98,7 @@ text = "Volume"
 layout_mode = 2
 size_flags_vertical = 3
 
+
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
