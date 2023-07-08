@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cohjnl5ts70fy"]
+[gd_scene load_steps=7 format=3 uid="uid://cohjnl5ts70fy"]
 
 [ext_resource type="Script" path="res://Game/Player/scripts/Movement.gd" id="1_qtxkv"]
 [ext_resource type="Texture2D" uid="uid://4hn3iyitug2a" path="res://Game/Player/assets/RunningAnim.png" id="2_c6ttq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtw7i"]
+size = Vector2(40, 85)
 
 [sub_resource type="Animation" id="Animation_hchml"]
 length = 0.001
@@ -54,6 +57,8 @@ texture = ExtResource("2_c6ttq")
 hframes = 7
 
 [node name="Collider" type="CollisionShape2D" parent="CharacterController"]
+position = Vector2(908, 471.5)
+shape = SubResource("RectangleShape2D_dtw7i")
 
 [node name="Animation" type="AnimationPlayer" parent="CharacterController"]
 libraries = {

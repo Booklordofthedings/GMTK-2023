@@ -1,7 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://d2bv7iscxtmg2"]
 
 [ext_resource type="Script" path="res://Game/MainGame/ScoreLogic.cs" id="1_cuc8v"]
-[ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
 [ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/Background.png" id="2_knxp1"]
 [ext_resource type="Texture2D" uid="uid://cryk88utfvdp4" path="res://Game/MainGame/assets/HealthBar.png" id="3_hagf8"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="4_expem"]
@@ -10,9 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://b1cmvdcaqkg2b" path="res://Game/Monsters/Slime/Slime.tscn" id="7_slrgf"]
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Theme/King/foolish.tscn" id="8_ehebq"]
 [ext_resource type="PackedScene" uid="uid://86tqimr4j8lq" path="res://Game/Monsters/Bullet/Bullet.tscn" id="9_4cd7f"]
+[ext_resource type="PackedScene" uid="uid://bqplebptq6ldr" path="res://Game/Monsters/Skeleton/Skeleton.tscn" id="10_6c47u"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" node_paths=PackedStringArray("scoreLabel")]
 script = ExtResource("1_cuc8v")
+scoreLabel = NodePath("UI/VBoxContainer/TopInfoBar/ScoreLabel")
 
 [node name="Floor" type="Sprite2D" parent="."]
 texture = ExtResource("2_knxp1")
@@ -77,11 +78,11 @@ texture_progress = ExtResource("5_w2vum")
 position = Vector2(659.31, 124.147)
 
 [node name="Slime" parent="." instance=ExtResource("7_slrgf")]
-position = Vector2(635, 387)
+position = Vector2(413, 295)
 
 [node name="King" parent="." instance=ExtResource("8_ehebq")]
 
 [node name="Bullet" parent="." instance=ExtResource("9_4cd7f")]
 position = Vector2(1130, 674)
 
-[node name="GUI" parent="." instance=ExtResource("2_ehxwo")]
+[node name="Skeleton" parent="." instance=ExtResource("10_6c47u")]

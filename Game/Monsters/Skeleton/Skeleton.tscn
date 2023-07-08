@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqplebptq6ldr"]
+
+[ext_resource type="Script" path="res://Game/Monsters/Skeleton/scripts/Skeleton.gd" id="1_1ci2r"]
+[ext_resource type="Texture2D" uid="uid://cw1bcfjbxp4nv" path="res://Game/Monsters/Skeleton/Melee_Enemie_Sprite.png" id="1_tir1m"]
+
+[sub_resource type="Animation" id="Animation_rhy3n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_phorj"]
+resource_name = "attack"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_ba0so"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g1r6y"]
+_data = {
+"RESET": SubResource("Animation_rhy3n"),
+"attack": SubResource("Animation_phorj"),
+"walk": SubResource("Animation_ba0so")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elr5e"]
+size = Vector2(109, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha5xf"]
+size = Vector2(1421.5, 541)
+
+[node name="Skeleton" type="Node2D"]
+position = Vector2(1488, 489)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_1ci2r")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+texture = ExtResource("1_tir1m")
+hframes = 11
+frame = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_g1r6y")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-5.5, 0.5)
+shape = SubResource("RectangleShape2D_elr5e")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(-621.75, -171.5)
+shape = SubResource("RectangleShape2D_ha5xf")
