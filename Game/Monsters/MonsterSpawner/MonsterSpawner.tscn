@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpr8chnsyuoln"]
+[gd_scene load_steps=6 format=3 uid="uid://bpr8chnsyuoln"]
 
 [ext_resource type="Script" path="res://Game/Monsters/MonsterSpawner/scripts/MonsterSpawner.cs" id="1_ystnt"]
 [ext_resource type="PackedScene" uid="uid://b1cmvdcaqkg2b" path="res://Game/Monsters/Slime/Slime.tscn" id="2_8rij0"]
 [ext_resource type="PackedScene" uid="uid://bqplebptq6ldr" path="res://Game/Monsters/Skeleton/Skeleton.tscn" id="2_kd76o"]
+[ext_resource type="PackedScene" uid="uid://b34esedgxipck" path="res://Game/Monsters/Barrel/Barrel.tscn" id="4_5suhr"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="4_t2ig1"]
 
 [node name="MonsterSpawner" type="Node" node_paths=PackedStringArray("WaveLabel")]
 script = ExtResource("1_ystnt")
-Monsters = [ExtResource("2_8rij0"), ExtResource("2_kd76o")]
-Weights = PackedInt32Array(1, 2)
+Monsters = [ExtResource("2_8rij0"), ExtResource("2_kd76o"), ExtResource("4_5suhr")]
+Wave = 5
 WaveLabel = NodePath("Control/Label")
 
 [node name="Control" type="Control" parent="."]

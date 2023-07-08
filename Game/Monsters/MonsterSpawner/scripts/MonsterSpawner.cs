@@ -6,10 +6,9 @@ public partial class MonsterSpawner : Node
 {
 	[Export]
 	public PackedScene[] Monsters;
+
 	[Export]
-	public int[] Weights;
-	[Export]
-	public int Wave = 0;
+	public int Wave;
 	[Export]
 	public Label WaveLabel;
 	private float showWaveLabelTimer = 3;
@@ -21,6 +20,7 @@ public partial class MonsterSpawner : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+<<<<<<< HEAD
 		for(int i = 0; i < Monsters.Length; i++)
 		{
 			for(int ii = 0; ii < Weights[i]; ii++)
@@ -31,6 +31,9 @@ public partial class MonsterSpawner : Node
 		
 		
 //		NewWave();
+=======
+		NewWave();
+>>>>>>> 3959554 (spawner works now)
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,7 +49,10 @@ public partial class MonsterSpawner : Node
 	{
 		Wave++;
 		showWaveLabelTimer = 3;
+
+		int WavePower = 2 + (int)(Wave * 1.5f);
 		WaveLabel.Text = "Wave:" + Wave.ToString();
+<<<<<<< HEAD
 		while(true)
 		{
 			int WavePower = (int)(5 + Wave + Mathf.Pow(Wave, 1.5));
@@ -57,6 +63,13 @@ public partial class MonsterSpawner : Node
 			AddChild(Items[toSpawn].Instantiate());
 			if(WavePower < 0)
 				return;
+=======
+
+		Random ran = new Random();
+		for(int i = 0; i < WavePower; i++)
+		{
+			TimerFunction(ran, WavePower, i);
+>>>>>>> 3959554 (spawner works now)
 		}
 		
 	}
@@ -69,4 +82,16 @@ public partial class MonsterSpawner : Node
 			NewWave();
 		}
 	}
+
+	private async void TimerFunction(Random ran, int WavePower, int i)
+	{
+		await ToSignal(GetTree().CreateTimer(0.5f * i), "timeout");
+		AddChild(
+			Monsters[
+				ran.Next(
+					Mathf.Clamp(WavePower,0, Monsters.Length)
+				)
+			].Instantiate()
+		);
+	} 
 }

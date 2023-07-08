@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b34esedgxipck"]
+
+[ext_resource type="Texture2D" uid="uid://swsassoge30j" path="res://Game/Monsters/Barrel/assets/Barrel.png" id="1_8stf7"]
+
+[node name="Barrel" type="Node2D"]
+scale = Vector2(5, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8stf7")

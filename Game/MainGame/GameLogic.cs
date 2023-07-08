@@ -25,6 +25,8 @@ public partial class GameLogic : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+
+		GD.Randomize();
 		if(FileAccess.FileExists("user://savegame.sav"))
 		{
 			var toRead = FileAccess.Open("user://savegame.sav", FileAccess.ModeFlags.Read);
