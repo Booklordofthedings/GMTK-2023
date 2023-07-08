@@ -30,7 +30,7 @@ public partial class MonsterSpawner : Node
 		}
 		
 		
-		NewWave();
+		//NewWave();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,9 +47,10 @@ public partial class MonsterSpawner : Node
 		Wave++;
 		showWaveLabelTimer = 3;
 		WaveLabel.Text = "Wave:" + Wave.ToString();
+
+		int WavePower = (int)(5 + Wave + Mathf.Pow(Wave, 1.5));
 		while(true)
 		{
-			int WavePower = (int)(5 + Wave + Mathf.Pow(Wave, 1.5));
 			var ran = new Random();
 			var toSpawn = ran.Next(Items.Count);
 			WavePower -= toSpawn+1;

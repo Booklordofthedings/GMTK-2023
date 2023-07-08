@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 var  speed = 100
 var king_position
-var target_position
+var target_position = Vector2(0,0)
 #@onready var king = find_node("res://Game/Player/Player.tscn")
 
 func _physics_process(delta):
 	
-	king_position = king.get_node("CharacterController").position
+	#king_position = king.get_node("CharacterController").position
 	target_position = (king_position - position).normalized()
 	
 	if position.distance_to(king_position) < 500:
