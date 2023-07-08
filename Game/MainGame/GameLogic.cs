@@ -17,6 +17,9 @@ public partial class GameLogic : Node
 	[Export]
 	public Label scoreLabel;
 	private float score = 0;
+	
+	[ExportCategory("KingData")]
+	[Export] int life;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

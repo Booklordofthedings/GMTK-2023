@@ -20,7 +20,7 @@ func _physics_process(delta):
 		velocity.y = -velocity.y
 		
 	velocity += Vector2(0, 0.2 * direction)
-	velocity.x = clamp(velocity.y, -3,3)
+	velocity.y = clamp(velocity.y, -30, 30)
 	
 	if direction == -1:
 		animations.play("walkUp")
