@@ -14,7 +14,13 @@ public partial class Barrel : RigidBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		MoveAndCollide(ToMove * (float)delta);
+		//MoveAndCollide(ToMove * (float)delta);
 		ToRotate.Rotate(-1f * (float)delta);
 	}
+
 }
+
+
+
+
+

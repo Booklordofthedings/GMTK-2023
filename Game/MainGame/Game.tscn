@@ -10,11 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
 [ext_resource type="PackedScene" uid="uid://bpr8chnsyuoln" path="res://Game/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="12_4qu7v"]
 
-[node name="Game" type="Node" node_paths=PackedStringArray("scoreLabel", "lifebar")]
+[node name="Game" type="Node" node_paths=PackedStringArray("_King", "scoreLabel", "lifebar")]
 process_mode = 1
 script = ExtResource("1_yv00e")
 MonsterSpawner = ExtResource("12_4qu7v")
-King = ExtResource("8_ehebq")
+_King = NodePath("King")
 Player = ExtResource("6_g5uo4")
 scoreLabel = NodePath("UI/VBoxContainer/TopInfoBar/ScoreLabel")
 lifebar = NodePath("UI/TextureProgressBar")
@@ -37,8 +37,7 @@ offset_left = 20.0
 offset_top = 53.0
 offset_right = 443.0
 offset_bottom = 71.0
-max_value = 1000.0
-value = 1000.0
+max_value = 10.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_hagf8")
 
@@ -82,3 +81,5 @@ texture_progress = ExtResource("5_w2vum")
 
 [node name="GUI" parent="." instance=ExtResource("2_ehxwo")]
 process_mode = 3
+
+[node name="King" parent="." instance=ExtResource("8_ehebq")]
