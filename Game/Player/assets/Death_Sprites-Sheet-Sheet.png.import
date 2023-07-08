@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx44dk8hgu7mm"
-path="res://.godot/imported/Death_Sprite-Sheet.png-af2a3c97f1f9561d050e5f5648d10964.ctex"
+uid="uid://dtrlci58skaic"
+path="res://.godot/imported/Death_Sprites-Sheet-Sheet.png-3c87fe1a0fe3bd2e958483f694d73580.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Player/assets/Death_Sprite-Sheet.png"
-dest_files=["res://.godot/imported/Death_Sprite-Sheet.png-af2a3c97f1f9561d050e5f5648d10964.ctex"]
+source_file="res://Game/Player/assets/Death_Sprites-Sheet-Sheet.png"
+dest_files=["res://.godot/imported/Death_Sprites-Sheet-Sheet.png-3c87fe1a0fe3bd2e958483f694d73580.ctex"]
 
 [params]
 
