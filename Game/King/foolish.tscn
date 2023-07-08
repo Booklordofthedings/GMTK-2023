@@ -107,6 +107,7 @@ gravity_scale = 0.0
 max_contacts_reported = 1
 contact_monitor = true
 lock_rotation = true
+constant_force = Vector2(9.88, 0)
 script = ExtResource("1_fsdft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
