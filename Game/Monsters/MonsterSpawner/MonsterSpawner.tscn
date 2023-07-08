@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Game/Monsters/MonsterSpawner/scripts/MonsterSpawner.cs" id="1_ystnt"]
 [ext_resource type="PackedScene" uid="uid://b1cmvdcaqkg2b" path="res://Game/Monsters/Slime/Slime.tscn" id="2_8rij0"]
 [ext_resource type="PackedScene" uid="uid://bqplebptq6ldr" path="res://Game/Monsters/Skeleton/Skeleton.tscn" id="2_kd76o"]
-[ext_resource type="PackedScene" uid="uid://b34esedgxipck" path="res://Game/Monsters/Barrel/Barrel.tscn" id="4_5suhr"]
+[ext_resource type="PackedScene" uid="uid://cncwwhaipgvvf" path="res://Game/Monsters/Barrel/Barrel.tscn" id="4_5suhr"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="4_t2ig1"]
 
 [node name="MonsterSpawner" type="Node" node_paths=PackedStringArray("WaveLabel")]

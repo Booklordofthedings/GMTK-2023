@@ -1,9 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://b34esedgxipck"]
+[gd_scene load_steps=5 format=3 uid="uid://cncwwhaipgvvf"]
 
 [ext_resource type="Texture2D" uid="uid://swsassoge30j" path="res://Game/Monsters/Barrel/assets/Barrel.png" id="1_8stf7"]
+[ext_resource type="Script" path="res://Game/Monsters/Barrel/scripts/Barrel.cs" id="1_qxdeo"]
+[ext_resource type="Texture2D" uid="uid://cbcafx7a1ishg" path="res://Game/Monsters/Barrel/assets/Barrel_Shadow.png" id="3_twxmi"]
 
-[node name="Barrel" type="Node2D"]
-scale = Vector2(5, 5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ukm3k"]
+radius = 7.07107
+
+[node name="Barrel" type="RigidBody2D" node_paths=PackedStringArray("ToRotate")]
+script = ExtResource("1_qxdeo")
+ToMove = Vector2(-300, 0)
+ToRotate = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_ukm3k")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(6, 6)
+texture = ExtResource("3_twxmi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(6, 6)
 texture = ExtResource("1_8stf7")
