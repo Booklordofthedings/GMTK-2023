@@ -27,12 +27,16 @@ public partial class GameLogic : Node
 			score = float.Parse(toRead.GetLine());
 		}
 
+
 		_MonsterSpawner = MonsterSpawner.Instantiate();
 		_King = King.Instantiate();
 		_Player = Player.Instantiate();
 		AddChild(_MonsterSpawner);
 		AddChild(_King);
 		AddChild(_Player);
+
+
+		//_King.GetNode("");
 		
 	}
 
