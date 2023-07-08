@@ -8,13 +8,6 @@ extends CharacterBody2D
 #	velocity = input_direction * speed
 
 func _process(_delta):
-	if Input.is_action_pressed("down"):
-		animations.play("walkDown")
-	elif Input.is_action_pressed("up"):
-		animations.play("walkUp")
-	else:
 		animations.play("idle")
 
 func _physics_process(delta):
-#	get_input()
-	move_and_slide()

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dm22v1jb8offb"
-path="res://.godot/imported/Foolish_King_Sprite_Sheet.png-7e3f46655cc6879473f0fa969617ca62.ctex"
+path="res://.godot/imported/Foolish_King_Sprite_Sheet.png-f767a6f4425a32e2c173939987eacdf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Theme/King/Foolish_King_Sprite_Sheet.png"
-dest_files=["res://.godot/imported/Foolish_King_Sprite_Sheet.png-7e3f46655cc6879473f0fa969617ca62.ctex"]
+source_file="res://Game/King/assets/Foolish_King_Sprite_Sheet.png"
+dest_files=["res://.godot/imported/Foolish_King_Sprite_Sheet.png-f767a6f4425a32e2c173939987eacdf3.ctex"]
 
 [params]
 

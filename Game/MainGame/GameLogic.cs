@@ -1,8 +1,19 @@
 using Godot;
 using System;
 
-public partial class ScoreLogic : Node
+public partial class GameLogic : Node
 {
+	[ExportCategory("ToInstantiate")]
+	[Export] PackedScene MonsterSpawner;
+	private Node _MonsterSpawner;
+	[Export] PackedScene King;
+	private Node _King;
+	[Export] PackedScene Player;
+	private Node _Player;
+
+
+
+	[ExportCategory("Other")]
 	[Export]
 	public Label scoreLabel;
 	private float score = 0;
@@ -15,6 +26,14 @@ public partial class ScoreLogic : Node
 			var toRead = FileAccess.Open("user://savegame.sav", FileAccess.ModeFlags.Read);
 			score = float.Parse(toRead.GetLine());
 		}
+
+		_MonsterSpawner = MonsterSpawner.Instantiate();
+		_King = King.Instantiate();
+		_Player = Player.Instantiate();
+		AddChild(_MonsterSpawner);
+		AddChild(_King);
+		AddChild(_Player);
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

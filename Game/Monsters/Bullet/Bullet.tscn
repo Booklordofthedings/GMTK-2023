@@ -7,6 +7,8 @@
 script = ExtResource("1_io0im")
 movement = Vector2(4, 5)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_l08n4")
