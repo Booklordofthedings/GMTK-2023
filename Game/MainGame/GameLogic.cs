@@ -6,7 +6,7 @@ public partial class GameLogic : Node
 	[ExportCategory("ToInstantiate")]
 	[Export] PackedScene MonsterSpawner;
 	private Node _MonsterSpawner;
-	[Export] PackedScene King;
+	[Export]
 	private Node _King;
 	[Export] PackedScene Player;
 	private Node _Player;
@@ -35,15 +35,11 @@ public partial class GameLogic : Node
 
 
 		_MonsterSpawner = MonsterSpawner.Instantiate();
-		_King = King.Instantiate();
 		_Player = Player.Instantiate();
 		AddChild(_MonsterSpawner);
-		AddChild(_King);
 		AddChild(_Player);
 
-
-		//_King.GetNode("");
-		lifebar.Value = 1000;
+		lifebar.Value = life;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,4 +62,5 @@ public partial class GameLogic : Node
 			var SaveGame = FileAccess.Open("user://savegame.sav", FileAccess.ModeFlags.Write);
 			SaveGame.StoreLine(score.ToString());
 	}
+
 }
