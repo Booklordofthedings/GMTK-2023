@@ -7,11 +7,12 @@ var target_position
 
 func _physics_process(delta):
 	
-	king_position = king.position
+	king_position = king.get_node("CharacterController").position
 	target_position = (king_position - position).normalized()
 	
-	if position.distance_to(king_position) > 5:
-		move_and_collide(target_position * speed * delta)
+	if position.distance_to(king_position) < 500:
+		velocity = target_position * speed
+		move_and_slide()
 
 
 
