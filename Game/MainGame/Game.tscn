@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2bv7iscxtmg2"]
+
+[ext_resource type="Script" path="res://Game/MainGame/ScoreLogic.cs" id="1_cuc8v"]
+[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/bg_2.png" id="2_knxp1"]
+[ext_resource type="Texture2D" uid="uid://cryk88utfvdp4" path="res://Game/MainGame/Assets/HealthBar.png" id="3_hagf8"]
+[ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="4_expem"]
+[ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="5_w2vum"]
+[ext_resource type="PackedScene" uid="uid://cohjnl5ts70fy" path="res://Game/Player/Player.tscn" id="6_g5uo4"]
+[ext_resource type="PackedScene" uid="uid://b1cmvdcaqkg2b" path="res://Game/Monsters/Slime/Slime.tscn" id="7_slrgf"]
+[ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
+[ext_resource type="PackedScene" uid="uid://86tqimr4j8lq" path="res://Game/Monsters/Bullet/Bullet.tscn" id="9_4cd7f"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_cuc8v")
+scoreLabel = Object(Label,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":3,"anchors_preset":0,"anchor_left":0.0,"anchor_top":0.0,"anchor_right":0.0,"anchor_bottom":0.0,"offset_left":0.0,"offset_top":0.0,"offset_right":0.0,"offset_bottom":0.0,"grow_horizontal":1,"grow_vertical":1,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"auto_translate":true,"localize_numeral_system":true,"tooltip_text":"","focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":0,"mouse_filter":2,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":0,"shortcut_context":null,"theme":null,"theme_type_variation":&"","theme_override_fonts/font":ExtResource("4_expem"),"text":"Score: 123232","label_settings":null,"horizontal_alignment":0,"vertical_alignment":0,"autowrap_mode":0,"justification_flags":163,"clip_text":false,"text_overrun_behavior":0,"uppercase":false,"tab_stops":PackedFloat32Array(),"lines_skipped":0,"max_lines_visible":-1,"visible_characters":-1,"visible_characters_behavior":0,"visible_ratio":1.0,"text_direction":0,"language":"","structured_text_bidi_override":0,"structured_text_bidi_override_options":[],"script":null)
+
+
+[node name="Floor" type="Sprite2D" parent="."]
+texture = ExtResource("2_knxp1")
+centered = false
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 53.0
+offset_right = 362.0
+offset_bottom = 103.0
+value = 50.0
+texture_progress = ExtResource("3_hagf8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 123.0
+offset_bottom = 37.0
+
+[node name="TopInfoBar" type="MarginContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScoreLabel" type="Label" parent="UI/VBoxContainer/TopInfoBar"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_expem")
+text = "Score: 123232"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/HBoxContainer"]
+layout_mode = 2
+value = 86.0
+fill_mode = 4
+texture_progress = ExtResource("5_w2vum")
+
+[node name="PlayerDeath" parent="." instance=ExtResource("6_g5uo4")]
+position = Vector2(659.31, 124.147)
+
+[node name="Slime" parent="." instance=ExtResource("7_slrgf")]
+position = Vector2(635, 387)
+
+[node name="King" parent="." instance=ExtResource("8_ehebq")]
+
+[node name="Bullet" parent="." instance=ExtResource("9_4cd7f")]
+position = Vector2(1130, 674)

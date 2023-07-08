@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx6gg3cuw8vu3"]
+
+[ext_resource type="Script" path="res://Game/King/foolishKing.gd" id="1_fsdft"]
+[ext_resource type="Texture2D" uid="uid://dm22v1jb8offb" path="res://Game/King/Foolish_King_Sprite_Sheet.png" id="2_pok3b"]
+
+[sub_resource type="Animation" id="Animation_xf6bx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_8481o"]
+resource_name = "walkDown"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_ocuj5"]
+resource_name = "walkUp"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cfq5j"]
+_data = {
+"RESET": SubResource("Animation_xf6bx"),
+"walkDown": SubResource("Animation_8481o"),
+"walkUp": SubResource("Animation_ocuj5")
+}
+
+[node name="King" type="Node2D"]
+
+[node name="foolishKing" type="CharacterBody2D" parent="."]
+script = ExtResource("1_fsdft")
+
+[node name="Sprite2D" type="Sprite2D" parent="foolishKing"]
+texture_filter = 1
+position = Vector2(933, 496)
+texture = ExtResource("2_pok3b")
+hframes = 12
+frame = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foolishKing"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="foolishKing"]
+libraries = {
+"": SubResource("AnimationLibrary_cfq5j")
+}
