@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bi8u30y04btvw"]
 
-[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Backgrounds/bg_2.png" id="1_7wax4"]
+[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/bg_2.png" id="1_7wax4"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://MainMenu/fonts/Nohemi-Medium.ttf" id="2_fpwt6"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://MainMenu/fonts/Geizer.otf" id="3_ucajq"]
 [ext_resource type="Script" path="res://MainMenu/scripts/startGame.cs" id="4_23w6y"]

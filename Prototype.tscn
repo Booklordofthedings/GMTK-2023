@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Background.cs" id="1_dhik0"]
 [ext_resource type="Texture2D" uid="uid://b4pbf5te63lqu" path="res://Backgrounds/bg_1.png" id="1_h861k"]
-[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Backgrounds/bg_2.png" id="2_ls5fm"]
+[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/bg_2.png" id="2_ndw1v"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,7 +12,7 @@ fst = NodePath("1")
 lst = NodePath("2")
 
 [node name="BackgroundImages" type="Sprite2D" parent="Background"]
-texture = ExtResource("2_ls5fm")
+texture = ExtResource("2_ndw1v")
 centered = false
 
 [node name="2" type="Sprite2D" parent="Background"]

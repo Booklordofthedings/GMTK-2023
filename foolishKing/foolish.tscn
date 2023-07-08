@@ -58,7 +58,7 @@ _data = {
 "walkUp": SubResource("Animation_ocuj5")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="King" type="Node2D"]
 
 [node name="foolishKing" type="CharacterBody2D" parent="."]
 script = ExtResource("1_fsdft")

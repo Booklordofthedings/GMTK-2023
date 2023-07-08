@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1cmvdcaqkg2b"]
+
+[ext_resource type="Script" path="res://Monsters/Slime/Slime.cs" id="1_ytrkg"]
+[ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="2_bccqs"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ytrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bccqs")
