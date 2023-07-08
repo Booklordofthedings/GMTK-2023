@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfa5k085rlb7q"]
+[gd_scene load_steps=6 format=3 uid="uid://cfa5k085rlb7q"]
 
+[ext_resource type="Script" path="res://Menus/Death/Death_Menu.cs" id="1_6byli"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="1_js6em"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="2_dm8dx"]
 
@@ -22,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6byli")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 show_behind_parent = true
@@ -91,3 +93,6 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_dkxuw")
 text = "Quit to Menu
 "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/End" to="." method="_on_end_pressed"]
