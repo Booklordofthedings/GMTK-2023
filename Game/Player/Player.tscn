@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cohjnl5ts70fy"]
+[gd_scene load_steps=7 format=3 uid="uid://cohjnl5ts70fy"]
 
 [ext_resource type="Script" path="res://Game/Player/scripts/Movement.gd" id="1_qtxkv"]
 [ext_resource type="Texture2D" uid="uid://4hn3iyitug2a" path="res://Game/Player/assets/RunningAnim.png" id="2_c6ttq"]
