@@ -12,12 +12,6 @@ func _process(_delta):
 		animations.play("walkDown")
 	elif Input.is_action_pressed("up"):
 		animations.play("walkUp")
-	elif Input.is_action_pressed("left"):
-		get_node("Sprite2D").set_flip_h(true)
-		animations.play("walkLeft")
-	elif Input.is_action_pressed("right"):
-		get_node("Sprite2D").set_flip_h(false)
-		animations.play("walkRight")
 	else:
 		animations.stop()
 

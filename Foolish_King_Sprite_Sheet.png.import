@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjhqmy6nwmv5b"
-path="res://.godot/imported/Knight_1_RunningAnimation.png-7ae8df41bb97693f51009cb8e3dfc137.ctex"
+uid="uid://dm22v1jb8offb"
+path="res://.godot/imported/Foolish_King_Sprite_Sheet.png-f86ebd2ad6a4fdb3194aa2c79945ee64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Knight_1_RunningAnimation.png"
-dest_files=["res://.godot/imported/Knight_1_RunningAnimation.png-7ae8df41bb97693f51009cb8e3dfc137.ctex"]
+source_file="res://Foolish_King_Sprite_Sheet.png"
+dest_files=["res://.godot/imported/Foolish_King_Sprite_Sheet.png-f86ebd2ad6a4fdb3194aa2c79945ee64.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
