@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/bg_2.png" id="1_7wax4"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="2_fpwt6"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="3_ucajq"]
-[ext_resource type="Script" path="res://MainMenu/scripts/startGame.cs" id="4_23w6y"]
-[ext_resource type="Script" path="res://MainMenu/scripts/fullscreen.cs" id="5_0uwhj"]
-[ext_resource type="Script" path="res://PauseMenu/QuitBtn.cs" id="6_nmmy5"]
+[ext_resource type="Script" path="res://Menus/MainMenu/scripts/startGame.cs" id="4_23w6y"]
+[ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="5_0uwhj"]
+[ext_resource type="Script" path="res://Menus/PauseMenu/QuitBtn.cs" id="6_nmmy5"]
 [ext_resource type="Texture2D" uid="uid://c2vddax8hmsy2" path="res://Menus/MainMenu/assets/GMTK-White@2000.png" id="6_srkap"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_spi0m"]
