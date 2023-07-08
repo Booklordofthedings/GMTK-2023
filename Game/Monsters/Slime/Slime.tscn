@@ -1,93 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1cmvdcaqkg2b"]
+[gd_scene load_steps=4 format=3 uid="uid://b1cmvdcaqkg2b"]
 
 [ext_resource type="Script" path="res://Game/Monsters/Slime/scripts/Slime.cs" id="1_ytrkg"]
-[ext_resource type="Texture2D" uid="uid://moc3nfv3cl52" path="res://Game/Monsters/Slime/Red_Slime_Sprite-Sheet.png" id="2_6hh1e"]
+[ext_resource type="Texture2D" uid="uid://cmo50ncnh38q1" path="res://Game/Monsters/Slime/assets/Red_Slime_Sprite-Sheet.png" id="2_ceapl"]
 
-[sub_resource type="Animation" id="Animation_vtlt7"]
-resource_name = "walkLeft"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_xral3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame_coords")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_ppdhx"]
-resource_name = "walkRight"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(3, 2)]
-}
-
-[sub_resource type="Animation" id="Animation_w8ytq"]
-resource_name = "idle"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xvtke"]
-_data = {
-"RESET": SubResource("Animation_xral3"),
-"idle": SubResource("Animation_w8ytq"),
-"walkLeft": SubResource("Animation_vtlt7"),
-"walkRight": SubResource("Animation_ppdhx")
-}
+[sub_resource type="CircleShape2D" id="CircleShape2D_wk81q"]
+radius = 7.51665
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(4, 4)
@@ -95,12 +12,11 @@ script = ExtResource("1_ytrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_6hh1e")
+texture = ExtResource("2_ceapl")
 hframes = 4
 vframes = 3
-frame = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_xvtke")
-}
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_wk81q")
