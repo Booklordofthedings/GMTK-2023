@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class MonsterSpawner : Node
 {
@@ -14,10 +15,21 @@ public partial class MonsterSpawner : Node
 	private float showWaveLabelTimer = 3;
 
 	private int ToKill = 0;
+	
+	private List<PackedScene> Items = new List<PackedScene>();
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		for(int i = 0; i < Monsters.Length; i++)
+		{
+			for(int ii = 0; ii < Weights[i]; ii++)
+			{
+				Items.Add(Monsters[i]);
+			}
+		}
+		
+		
 		NewWave();
 	}
 
@@ -35,10 +47,18 @@ public partial class MonsterSpawner : Node
 		Wave++;
 		showWaveLabelTimer = 3;
 		WaveLabel.Text = "Wave:" + Wave.ToString();
+		while(true)
+		{
+			int WavePower = (int)(5 + Wave + Mathf.Pow(Wave, 1.5));
+			var ran = new Random();
+			var toSpawn = ran.Next(Items.Count);
+			WavePower -= toSpawn+1;
 
-
+			AddChild(Items[toSpawn].Instantiate());
+			if(WavePower < 0)
+				return;
+		}
 		
-
 	}
 
 	public void Kill()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2bv7iscxtmg2"]
+[gd_scene load_steps=11 format=3 uid="uid://d2bv7iscxtmg2"]
 
 [ext_resource type="Script" path="res://Game/MainGame/GameLogic.cs" id="1_yv00e"]
 [ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
@@ -7,16 +7,18 @@
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="4_expem"]
 [ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="5_w2vum"]
 [ext_resource type="PackedScene" uid="uid://cohjnl5ts70fy" path="res://Game/Player/Player.tscn" id="6_g5uo4"]
+[ext_resource type="PackedScene" uid="uid://b1cmvdcaqkg2b" path="res://Game/Monsters/Slime/Slime.tscn" id="7_73nsr"]
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
 [ext_resource type="PackedScene" uid="uid://bpr8chnsyuoln" path="res://Game/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="12_4qu7v"]
 
-[node name="Game" type="Node" node_paths=PackedStringArray("scoreLabel")]
+[node name="Game" type="Node" node_paths=PackedStringArray("scoreLabel", "lifebar")]
 process_mode = 1
 script = ExtResource("1_yv00e")
 MonsterSpawner = ExtResource("12_4qu7v")
 King = ExtResource("8_ehebq")
 Player = ExtResource("6_g5uo4")
 scoreLabel = NodePath("UI/VBoxContainer/TopInfoBar/ScoreLabel")
+lifebar = NodePath("UI/TextureProgressBar")
 
 [node name="Floor" type="Sprite2D" parent="."]
 texture = ExtResource("2_knxp1")
@@ -34,9 +36,11 @@ grow_vertical = 2
 layout_mode = 2
 offset_left = 20.0
 offset_top = 53.0
-offset_right = 362.0
-offset_bottom = 103.0
-value = 50.0
+offset_right = 443.0
+offset_bottom = 71.0
+max_value = 1000.0
+value = 1000.0
+nine_patch_stretch = true
 texture_progress = ExtResource("3_hagf8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
@@ -79,3 +83,6 @@ texture_progress = ExtResource("5_w2vum")
 
 [node name="GUI" parent="." instance=ExtResource("2_ehxwo")]
 process_mode = 3
+
+[node name="Node2D" parent="." instance=ExtResource("7_73nsr")]
+position = Vector2(1572, 498)

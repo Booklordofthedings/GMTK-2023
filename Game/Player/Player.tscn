@@ -48,6 +48,7 @@ _data = {
 position = Vector2(500, 500)
 
 [node name="CharacterController" type="CharacterBody2D" parent="."]
+collision_mask = 2
 script = ExtResource("1_qtxkv")
 
 [node name="Sprite" type="Sprite2D" parent="CharacterController"]
@@ -58,6 +59,7 @@ texture = ExtResource("2_c6ttq")
 hframes = 7
 
 [node name="Collider" type="CollisionShape2D" parent="CharacterController"]
+visibility_layer = 2
 position = Vector2(908, 471.5)
 shape = SubResource("RectangleShape2D_dtw7i")
 

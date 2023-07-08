@@ -3,7 +3,7 @@ extends CharacterBody2D
 var  speed = 100
 var king_position
 var target_position
-@onready var king = get_node("../../PlayerDeath")  
+#@onready var king = find_node("res://Game/Player/Player.tscn")
 
 func _physics_process(delta):
 	

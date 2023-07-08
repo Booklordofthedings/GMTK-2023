@@ -83,20 +83,18 @@ _data = {
 
 [node name="foolishKing" type="CharacterBody2D" parent="."]
 position = Vector2(102, 517)
-collision_layer = 2
-motion_mode = 1
+collision_mask = 2
 platform_floor_layers = 0
 script = ExtResource("1_fsdft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foolishKing"]
+shape = SubResource("RectangleShape2D_vmonq")
 
 [node name="Sprite2D" type="Sprite2D" parent="foolishKing"]
 texture_filter = 1
 texture = ExtResource("2_pok3b")
 hframes = 12
 frame = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="foolishKing"]
-shape = SubResource("RectangleShape2D_vmonq")
-disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="foolishKing"]
 libraries = {
