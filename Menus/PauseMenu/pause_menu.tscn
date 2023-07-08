@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bi8u30y04btvw"]
+[gd_scene load_steps=8 format=3 uid="uid://bi8u30y04btvw"]
 
-[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/Background.png" id="1_7wax4"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="2_fpwt6"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="3_ucajq"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/startGame.cs" id="4_23w6y"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="5_0uwhj"]
 [ext_resource type="Script" path="res://Menus/PauseMenu/QuitBtn.cs" id="6_nmmy5"]
-[ext_resource type="Texture2D" uid="uid://c2vddax8hmsy2" path="res://Menus/MainMenu/assets/GMTK-White@2000.png" id="6_srkap"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_spi0m"]
 line_spacing = 1.0
@@ -28,18 +26,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(0.631373, 0.611765, 0.584314, 0.709804)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 14117.0
-offset_bottom = 7941.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_7wax4")
-expand_mode = 2
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(4, 4)
+color = Color(0.631373, 0.611765, 0.584314, 0.631373)
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 show_behind_parent = true
@@ -54,19 +46,6 @@ theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 20
-
-[node name="Label" type="Label" parent="MarginContainer2"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("2_fpwt6")
-theme_override_font_sizes/font_size = 25
-text = "Made by:
-Jannis
-Fabio
-Leon
-Johannes"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 top_level = true
@@ -144,24 +123,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_gvw8j")
 text = "Quit to Menu
 "
 script = ExtResource("6_nmmy5")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-top_level = true
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -131.0
-offset_top = -151.0
-offset_right = -16.0
-offset_bottom = -16.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("6_srkap")
-expand_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" method="Onclick"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" method="ToggleFullscreen"]
