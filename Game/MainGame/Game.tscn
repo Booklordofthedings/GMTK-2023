@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b1cmvdcaqkg2b" path="res://Game/Monsters/Slime/Slime.tscn" id="7_slrgf"]
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Theme/King/foolish.tscn" id="8_ehebq"]
 [ext_resource type="PackedScene" uid="uid://86tqimr4j8lq" path="res://Game/Monsters/Bullet/Bullet.tscn" id="9_4cd7f"]
+[ext_resource type="PackedScene" uid="uid://bqplebptq6ldr" path="res://Game/Monsters/Skeleton/Skeleton.tscn" id="10_6c47u"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_cuc8v")
@@ -78,10 +79,15 @@ position = Vector2(659.31, 124.147)
 
 [node name="Slime" parent="." instance=ExtResource("7_slrgf")]
 position = Vector2(635, 387)
+position = Vector2(413, 295)
 
 [node name="King" parent="." instance=ExtResource("8_ehebq")]
 
 [node name="Bullet" parent="." instance=ExtResource("9_4cd7f")]
 position = Vector2(1130, 674)
 
+<<<<<<< Updated upstream
 [node name="GUI" parent="." instance=ExtResource("2_ehxwo")]
+=======
+[node name="Skeleton" parent="." instance=ExtResource("10_6c47u")]
+>>>>>>> Stashed changes
