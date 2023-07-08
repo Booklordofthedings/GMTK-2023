@@ -1,9 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi8u30y04btvw"]
+[gd_scene load_steps=11 format=3 uid="uid://bi8u30y04btvw"]
 
 [ext_resource type="Script" path="res://Menus/PauseMenu/pause_menu.gd" id="1_x8m2o"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="2_fpwt6"]
+[ext_resource type="Shader" path="res://Menus/PauseMenu/pause_menu_blur.gdshader" id="2_hthev"]
+[ext_resource type="Script" path="res://Menus/PauseMenu/BG.gd" id="3_80s3x"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="3_ucajq"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="5_0uwhj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13of1"]
+shader = ExtResource("2_hthev")
+shader_parameter/lod = 0.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_spi0m"]
 line_spacing = 1.0
@@ -51,12 +57,14 @@ grow_vertical = 2
 script = ExtResource("1_x8m2o")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(4, 4)
+material = SubResource("ShaderMaterial_13of1")
+layout_mode = 2
+offset_left = 815.0
+offset_top = 567.0
+offset_right = 1105.0
+offset_bottom = 567.0
 color = Color(0.631373, 0.611765, 0.584314, 0.631373)
+script = ExtResource("3_80s3x")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 show_behind_parent = true
