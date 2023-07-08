@@ -30,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_n0pae")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +40,7 @@ grow_vertical = 2
 texture = ExtResource("2_jk0fn")
 expand_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="Credits" type="MarginContainer" parent="."]
 show_behind_parent = true
 top_level = true
 layout_mode = 1
@@ -54,7 +54,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 20
 
-[node name="Label" type="Label" parent="MarginContainer2"]
+[node name="Label" type="Label" parent="Credits"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -66,7 +66,7 @@ Fabio
 Leon
 Johannes"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="StartOptions" type="MarginContainer" parent="."]
 top_level = true
 layout_mode = 1
 anchors_preset = 13
@@ -79,29 +79,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 150
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Container" type="VBoxContainer" parent="StartOptions"]
 show_behind_parent = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="StartOptions/Container"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "Death Game"
 label_settings = SubResource("LabelSettings_1im3j")
 vertical_alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+[node name="TitleOptions" type="MarginContainer" parent="StartOptions/Container"]
 layout_mode = 2
 theme_override_constants/margin_left = 180
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 180
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Containers" type="VBoxContainer" parent="StartOptions/Container/TitleOptions"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 8
 
-[node name="Start" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Start" type="Button" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_etu17")
 theme_override_font_sizes/font_size = 40
@@ -109,23 +109,17 @@ text = "Start
 "
 script = ExtResource("5_40nk1")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="VolumeLabel" type="Label" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_etu17")
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Volume" type="HSlider" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Fullscreen"
-
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="FullscreenToggle" type="CheckButton" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("3_etu17")
@@ -133,7 +127,7 @@ theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
 script = ExtResource("6_oxkse")
 
-[node name="End" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="End" type="Button" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_etu17")
@@ -142,7 +136,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1qbmu")
 text = "Quit
 "
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="GMTKLogo" type="TextureRect" parent="."]
 top_level = true
 layout_mode = 1
 anchors_preset = 3
@@ -159,5 +153,5 @@ grow_vertical = 0
 texture = ExtResource("7_m1l7c")
 expand_mode = 1
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" method="Onclick"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" method="ToggleFullscreen"]
+[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/Start" to="StartOptions/Container/TitleOptions/Containers/Start" method="Onclick"]
+[connection signal="toggled" from="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" to="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" method="ToggleFullscreen"]

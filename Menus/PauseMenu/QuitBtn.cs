@@ -14,7 +14,7 @@ public partial class QuitBtn : Node
 	}
 	private void Onclick()
 	{
-		GetTree().ChangeSceneToFile("res://MainMenu/MainMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Menus/MainMenu/MainMenu.tscn");
 	}
 }
 

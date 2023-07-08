@@ -15,6 +15,6 @@ public partial class startGame : Node
 	
 	public void Onclick()
 	{
-		GetTree().ChangeSceneToFile("res://Game/Game.tscn");
+		GetTree().ChangeSceneToFile("res://Game/MainGame/Game.tscn");
 	}
 }

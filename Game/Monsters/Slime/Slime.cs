@@ -6,7 +6,7 @@ public partial class Slime : Node2D
 	[Export]
 	float speed = 200;
 
-	Bullet 
+
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

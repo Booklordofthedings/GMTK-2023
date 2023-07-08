@@ -38,7 +38,6 @@ offset_right = 14117.0
 offset_bottom = 7941.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7wax4")
 expand_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
@@ -107,9 +106,8 @@ theme_override_constants/separation = 8
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_fpwt6")
 theme_override_font_sizes/font_size = 40
-text = "Resume
-"
-script = ExtResource("4_23w6y")
+text = "Resume"
+script = 
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -133,7 +131,7 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_fpwt6")
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
-script = ExtResource("5_0uwhj")
+script = 
 
 [node name="End" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -143,7 +141,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_gvw8j")
 text = "Quit to Menu
 "
-script = ExtResource("6_nmmy5")
+script = 
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -160,7 +158,6 @@ offset_right = -16.0
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("6_srkap")
 expand_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" method="Onclick"]

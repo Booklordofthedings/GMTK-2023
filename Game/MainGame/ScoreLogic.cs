@@ -23,7 +23,7 @@ public partial class ScoreLogic : Node
 		if(Input.GetActionStrength("Kill") > 0)
 		{
 			OnClose();
-			GetTree().ChangeSceneToFile("res://Shop/Shop.tscn");
+			GetTree().ChangeSceneToFile("res://Menus/Shop/Shop.tscn");
 		}
 
 

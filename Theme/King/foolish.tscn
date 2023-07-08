@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bx6gg3cuw8vu3"]
 
-[ext_resource type="Script" path="res://Game/King/foolishKing.gd" id="1_fsdft"]
-[ext_resource type="Texture2D" uid="uid://dm22v1jb8offb" path="res://Game/King/Foolish_King_Sprite_Sheet.png" id="2_pok3b"]
+[ext_resource type="Script" path="res://Theme/King/foolishKing.gd" id="1_fsdft"]
+[ext_resource type="Texture2D" uid="uid://dm22v1jb8offb" path="res://Theme/King/Foolish_King_Sprite_Sheet.png" id="2_pok3b"]
 
 [sub_resource type="Animation" id="Animation_xf6bx"]
 length = 0.001

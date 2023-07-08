@@ -8,7 +8,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -41,21 +41,21 @@ _data = {
 "walkRight": SubResource("Animation_uxjx4")
 }
 
-[node name="PlayerDeath" type="Node2D"]
+[node name="Player" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterController" type="CharacterBody2D" parent="."]
 script = ExtResource("1_qtxkv")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite" type="Sprite2D" parent="CharacterController"]
 texture_filter = 1
 position = Vector2(918, 439)
 scale = Vector2(5, 5)
 texture = ExtResource("2_c6ttq")
 hframes = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Collider" type="CollisionShape2D" parent="CharacterController"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="Animation" type="AnimationPlayer" parent="CharacterController"]
 libraries = {
 "": SubResource("AnimationLibrary_mvavq")
 }
