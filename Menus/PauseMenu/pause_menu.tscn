@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bi8u30y04btvw"]
 
-[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/bg_2.png" id="1_7wax4"]
+[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/Background.png" id="1_7wax4"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="2_fpwt6"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="3_ucajq"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/startGame.cs" id="4_23w6y"]
@@ -38,6 +38,7 @@ offset_right = 14117.0
 offset_bottom = 7941.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_7wax4")
 expand_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
@@ -106,8 +107,9 @@ theme_override_constants/separation = 8
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_fpwt6")
 theme_override_font_sizes/font_size = 40
-text = "Resume"
-script = 
+text = "Resume
+"
+script = ExtResource("4_23w6y")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -131,7 +133,7 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_fpwt6")
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
-script = 
+script = ExtResource("5_0uwhj")
 
 [node name="End" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -141,7 +143,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_gvw8j")
 text = "Quit to Menu
 "
-script = 
+script = ExtResource("6_nmmy5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -158,6 +160,7 @@ offset_right = -16.0
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
+texture = ExtResource("6_srkap")
 expand_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" method="Onclick"]
