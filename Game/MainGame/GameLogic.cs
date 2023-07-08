@@ -19,7 +19,8 @@ public partial class GameLogic : Node
 	private float score = 0;
 	
 	[ExportCategory("KingData")]
-	[Export] int life;
+	private int life = 10;
+	[Export] TextureProgressBar lifebar;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -40,7 +41,7 @@ public partial class GameLogic : Node
 
 
 		//_King.GetNode("");
-		
+		lifebar.Value = 1000;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -18,7 +18,7 @@ public partial class Slime : Node2D
 	{
 		Position = new Vector2(Position.X - 200 * (float)delta, Position.Y );
 		
-		if(Position.X < 0)
+		if(Position.X < 0-40)
 			QueueFree();
 	}
 }
