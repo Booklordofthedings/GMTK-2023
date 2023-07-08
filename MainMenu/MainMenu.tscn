@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://djy1vaskqd7ek"]
+[gd_scene load_steps=9 format=3 uid="uid://djy1vaskqd7ek"]
 
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://MainMenu/fonts/Geizer.otf" id="1_cckwp"]
+[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Backgrounds/bg_2.png" id="1_i56vn"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://MainMenu/fonts/Nohemi-Medium.ttf" id="3_4134v"]
 [ext_resource type="Texture2D" uid="uid://c2vddax8hmsy2" path="res://MainMenu/GMTK-White@2000.png" id="3_hf1el"]
+[ext_resource type="Script" path="res://MainMenu/scripts/fullscreen.cs" id="4_r7g4k"]
+[ext_resource type="Script" path="res://MainMenu/scripts/startGame.cs" id="4_xr10b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1im3j"]
 line_spacing = 1.0
@@ -18,23 +21,36 @@ bg_color = Color(0.259294, 0.259294, 0.259294, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 12.0
+anchor_bottom = 12.0
+offset_right = -0.00012207
+offset_bottom = -0.00012207
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+texture = ExtResource("1_i56vn")
+expand_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+show_behind_parent = true
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
 
 [node name="Label" type="Label" parent="MarginContainer2"]
 layout_mode = 2
@@ -49,18 +65,20 @@ Leon
 Johannes"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+top_level = true
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -183.0
-offset_right = 183.0
+offset_left = -325.0
+offset_right = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 150
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+show_behind_parent = true
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -87,6 +105,7 @@ theme_override_fonts/font = ExtResource("3_4134v")
 theme_override_font_sizes/font_size = 40
 text = "Start
 "
+script = ExtResource("4_xr10b")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -110,6 +129,7 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("3_4134v")
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
+script = ExtResource("4_r7g4k")
 
 [node name="End" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -121,6 +141,7 @@ text = "Quit
 "
 
 [node name="TextureRect" type="TextureRect" parent="."]
+top_level = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -135,3 +156,6 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("3_hf1el")
 expand_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" method="Onclick"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" method="ToggleFullscreen"]

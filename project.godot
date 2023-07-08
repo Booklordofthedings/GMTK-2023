@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/resizable=false
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -83,3 +85,5 @@ click={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/sdf/oversize=0
+2d/sdf/scale=0

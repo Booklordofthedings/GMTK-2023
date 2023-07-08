@@ -1,7 +1,28 @@
+<<<<<<< HEAD:Player/PlayerDeath.tscn
 [gd_scene load_steps=6 format=3 uid="uid://dl1tkeyrt8ksw"]
 
 [ext_resource type="Script" path="res://Player/movement.gd" id="1_qtxkv"]
 [ext_resource type="Texture2D" uid="uid://4hn3iyitug2a" path="res://skellington_1_RunningAnimation.png" id="2_c6ttq"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://bx6gg3cuw8vu3"]
+
+[ext_resource type="Script" path="res://Player/movement.gd" id="1_eegi6"]
+
+[sub_resource type="Animation" id="Animation_b4vda"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+>>>>>>> f4c2a51942ef8a0c15663cbb0c27f5d55958a4cc:Player/player.tscn
 
 [sub_resource type="Animation" id="Animation_uxjx4"]
 resource_name = "walkRight"
@@ -20,6 +41,7 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6]
 }
 
+<<<<<<< HEAD:Player/PlayerDeath.tscn
 [sub_resource type="Animation" id="Animation_hchml"]
 length = 0.001
 tracks/0/type = "value"
@@ -36,6 +58,9 @@ tracks/0/keys = {
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mvavq"]
+=======
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qrkqm"]
+>>>>>>> f4c2a51942ef8a0c15663cbb0c27f5d55958a4cc:Player/player.tscn
 _data = {
 "RESET": SubResource("Animation_hchml"),
 "walkRight": SubResource("Animation_uxjx4")
@@ -55,6 +80,14 @@ hframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 
+<<<<<<< HEAD:Player/PlayerDeath.tscn
+=======
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(57, 21)
+scale = Vector2(10, 10)
+hframes = 7
+
+>>>>>>> f4c2a51942ef8a0c15663cbb0c27f5d55958a4cc:Player/player.tscn
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 libraries = {
 "": SubResource("AnimationLibrary_mvavq")
