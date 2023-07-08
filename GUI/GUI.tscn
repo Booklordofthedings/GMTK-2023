@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://mvxsgdf54h76"]
+
+[ext_resource type="Texture2D" uid="uid://cryk88utfvdp4" path="res://Game/MainGame/assets/HealthBar.png" id="1_41gxh"]
+[ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="2_bumen"]
+[ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="3_ie8nf"]
+[ext_resource type="PackedScene" uid="uid://bi8u30y04btvw" path="res://Menus/PauseMenu/pause_menu.tscn" id="4_326pg"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 53.0
+offset_right = 362.0
+offset_bottom = 103.0
+value = 50.0
+texture_progress = ExtResource("1_41gxh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 123.0
+offset_bottom = 37.0
+
+[node name="TopInfoBar" type="MarginContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScoreLabel" type="Label" parent="UI/VBoxContainer/TopInfoBar"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_bumen")
+text = "Score: 123232"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/HBoxContainer"]
+layout_mode = 2
+value = 86.0
+fill_mode = 4
+texture_progress = ExtResource("3_ie8nf")
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_326pg")]

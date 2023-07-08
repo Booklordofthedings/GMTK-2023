@@ -14,6 +14,6 @@ func _process(_delta):
 		get_node("Sprite").set_flip_h(false)
 		animations.play("walkRight")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()
