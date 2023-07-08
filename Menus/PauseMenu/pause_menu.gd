@@ -24,4 +24,5 @@ func _on_ResumeBtn_pressed():
 	visible = is_paused
 
 func _on_QuitBtn_pressed():
+	is_paused = false
 	get_tree().change_scene_to_file("res://Menus/MainMenu/MainMenu.tscn")
