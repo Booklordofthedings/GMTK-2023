@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2bv7iscxtmg2"]
+[gd_scene load_steps=12 format=3 uid="uid://d2bv7iscxtmg2"]
 
 [ext_resource type="Script" path="res://Game/MainGame/ScoreLogic.cs" id="1_cuc8v"]
+[ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
 [ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/Background.png" id="2_knxp1"]
 [ext_resource type="Texture2D" uid="uid://cryk88utfvdp4" path="res://Game/MainGame/assets/HealthBar.png" id="3_hagf8"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="4_expem"]
@@ -86,3 +87,5 @@ position = Vector2(413, 295)
 position = Vector2(1130, 674)
 
 [node name="Skeleton" parent="." instance=ExtResource("10_6c47u")]
+
+[node name="GUI" parent="." instance=ExtResource("2_ehxwo")]
