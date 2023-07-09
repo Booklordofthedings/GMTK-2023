@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="5_mja8j"]
 [ext_resource type="PackedScene" uid="uid://cohjnl5ts70fy" path="res://Game/Player/Player.tscn" id="6_g5uo4"]
-[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/_Background.png" id="8_3b7dx"]
+[ext_resource type="Texture2D" uid="uid://bgv4kop1ptj4y" path="res://Game/MainGame/Level_Background.png" id="8_65g2u"]
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
 [ext_resource type="AudioStream" uid="uid://chgapvpb4cgal" path="res://Music/Cruising for Goblins.mp3" id="8_j23me"]
 [ext_resource type="PackedScene" uid="uid://bpr8chnsyuoln" path="res://Game/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="12_4qu7v"]
@@ -72,4 +72,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_3b7dx")
+texture = ExtResource("8_65g2u")
