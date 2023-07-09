@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Gmtk-2023"
+config/name="Behold The King"
 run/main_scene="res://Menus/MainMenu/MainMenu.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 boot_splash/show_image=false
