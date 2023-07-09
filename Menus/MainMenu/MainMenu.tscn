@@ -236,6 +236,6 @@ autoplay = true
 
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton" to="StartOptions/Container/TitleOptions/Containers/TextureButton" method="_on_pressed"]
 [connection signal="value_changed" from="StartOptions/Container/TitleOptions/Containers/VolumeLabel/Volume" to="StartOptions/Container/TitleOptions/Containers/VolumeLabel/Volume" method="_on_value_changed"]
-[connection signal="toggled" from="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" to="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" method="toggle_fullscreen"]
+[connection signal="toggled" from="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" to="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" method="_on_toggled"]
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton2" to="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" method="_on_pressed"]
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" to="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" method="_on_pressed"]
