@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpr8chnsyuoln"]
 
-[ext_resource type="Script" path="res://Game/Monsters/MonsterSpawner/scripts/MonsterSpawner.cs" id="1_ystnt"]
+[ext_resource type="Script" path="res://Game/Monsters/MonsterSpawner/scripts/MonsterSpawner.gd" id="1_7d4hs"]
 [ext_resource type="PackedScene" uid="uid://cncwwhaipgvvf" path="res://Game/Monsters/Barrel/Barrel.tscn" id="4_5suhr"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="4_t2ig1"]
 
 [node name="MonsterSpawner" type="Node"]
-script = ExtResource("1_ystnt")
+script = ExtResource("1_7d4hs")
 Monsters = ExtResource("4_5suhr")
 
 [node name="Control" type="Control" parent="."]
