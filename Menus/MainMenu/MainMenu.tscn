@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://g4v6hu0gvh7g" path="res://Menus/MainMenu/Throne_Hall_Background.png" id="2_sg6vt"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="4_4ce7n"]
 [ext_resource type="Texture2D" uid="uid://b5dlxo7fdtf1e" path="res://GUI/Button-n-scaled-2.png" id="4_rnpdy"]
-[ext_resource type="Script" path="res://Menus/MainMenu/scripts/startGame.cs" id="5_40nk1"]
 [ext_resource type="Texture2D" uid="uid://gvlu6mhsyb7t" path="res://GUI/Button-h-scaled-2.png" id="5_phbn4"]
 [ext_resource type="Script" path="res://Menus/MainMenu/Volume.gd" id="6_1s0ie"]
+[ext_resource type="Script" path="res://Menus/MainMenu/StartGame.gd" id="6_dvc6j"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="6_oxkse"]
 [ext_resource type="Script" path="res://Menus/MainMenu/End.gd" id="7_5h5gn"]
 [ext_resource type="Texture2D" uid="uid://c2vddax8hmsy2" path="res://Menus/MainMenu/assets/GMTK-White@2000.png" id="7_m1l7c"]
@@ -154,7 +154,7 @@ theme = ExtResource("1_n0pae")
 theme_override_font_sizes/font_size = 40
 text = "Start
 "
-script = ExtResource("5_40nk1")
+script = ExtResource("6_dvc6j")
 
 [node name="VolumeLabel" type="Label" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
@@ -235,7 +235,7 @@ volume_db = -31.986
 autoplay = true
 
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton" to="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" method="Onclick"]
-[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" to="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" method="Onclick"]
+[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" to="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" method="_on_pressed"]
 [connection signal="toggled" from="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" to="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" method="ToggleFullscreen"]
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton2" to="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" method="_on_pressed"]
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" to="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" method="_on_pressed"]
