@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cohjnl5ts70fy"]
+[gd_scene load_steps=11 format=3 uid="uid://cohjnl5ts70fy"]
 
 [ext_resource type="Script" path="res://Game/Player/scripts/Movement.gd" id="1_qtxkv"]
 [ext_resource type="Texture2D" uid="uid://dtrlci58skaic" path="res://Game/Player/assets/Death_Sprites-Sheet-Sheet.png" id="2_yhbdj"]
+[ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="3_pt2xj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtw7i"]
 size = Vector2(66, 110)
@@ -32,40 +33,16 @@ tracks/1/keys = {
 "update": 1,
 "values": [Vector2i(0, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("windKnockback/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_32knf"]
 resource_name = "attack"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("windKnockback/CollisionShape2D:disabled")
+tracks/0/path = NodePath("Sprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:frame_coords")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -114,21 +91,52 @@ _data = {
 "walkRight": SubResource("Animation_uxjx4")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7u617"]
-radius = 60.0012
-height = 316.017
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhkm5"]
+radius = 32.82
+height = 158.0
 
-[node name="Player" type="Node2D"]
-position = Vector2(500, 500)
+[node name="Player" type="Node"]
 
-[node name="CharacterController" type="CharacterBody2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+max_value = 4.0
+step = 0.01
+fill_mode = 4
+texture_progress = ExtResource("3_pt2xj")
+
+[node name="CharacterController" type="CharacterBody2D" parent="." node_paths=PackedStringArray("Progressar")]
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_qtxkv")
+Progressar = NodePath("../Control/MarginContainer/HBoxContainer/TextureProgressBar")
 
 [node name="Sprite" type="Sprite2D" parent="CharacterController"]
 texture_filter = 1
-position = Vector2(918, 439)
 scale = Vector2(5, 5)
 texture = ExtResource("2_yhbdj")
 hframes = 4
@@ -137,7 +145,6 @@ frame = 4
 
 [node name="Collider" type="CollisionShape2D" parent="CharacterController"]
 visibility_layer = 2
-position = Vector2(949, 444)
 shape = SubResource("RectangleShape2D_dtw7i")
 
 [node name="Animation" type="AnimationPlayer" parent="CharacterController"]
@@ -145,9 +152,17 @@ libraries = {
 "": SubResource("AnimationLibrary_mvavq")
 }
 
-[node name="windKnockback" type="Area2D" parent="CharacterController"]
+[node name="Scythe" type="Node2D" parent="CharacterController"]
+position = Vector2(101.18, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterController/windKnockback"]
-position = Vector2(1080, 441)
-rotation = -1.57205
-shape = SubResource("CapsuleShape2D_7u617")
+[node name="Sprite2D" type="Sprite2D" parent="CharacterController/Scythe"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_pt2xj")
+
+[node name="Area2D" type="Area2D" parent="CharacterController/Scythe"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterController/Scythe/Area2D"]
+shape = SubResource("CapsuleShape2D_mhkm5")
+
+[connection signal="body_entered" from="CharacterController/Scythe/Area2D" to="CharacterController" method="_on_area_2d_body_entered"]
