@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://cohjnl5ts70fy"]
 
-[ext_resource type="Texture2D" uid="uid://bkk66gg8hccgo" path="res://Game/Player/assets/Wing_Attack_Symbol.png" id="1_7v5nc"]
 [ext_resource type="Script" path="res://Game/Player/scripts/Movement.gd" id="1_qtxkv"]
 [ext_resource type="Texture2D" uid="uid://dtrlci58skaic" path="res://Game/Player/assets/Death_Sprites-Sheet-Sheet.png" id="2_yhbdj"]
 [ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="3_pt2xj"]
+[ext_resource type="Script" path="res://Game/Player/scripts/Dash.gd" id="4_u0rky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtw7i"]
 size = Vector2(66, 110)
@@ -34,40 +34,16 @@ tracks/1/keys = {
 "update": 1,
 "values": [Vector2i(0, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("windKnockback/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_32knf"]
 resource_name = "attack"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("windKnockback/CollisionShape2D:disabled")
+tracks/0/path = NodePath("Sprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:frame_coords")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -76,7 +52,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_2xtxu"]
 resource_name = "idle"
-length = 0.6
+length = 4.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -85,7 +61,7 @@ tracks/0/path = NodePath("Sprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 1.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1)]
@@ -152,9 +128,10 @@ layout_mode = 2
 max_value = 4.0
 step = 0.01
 fill_mode = 4
-texture_progress = ExtResource("1_7v5nc")
+texture_progress = ExtResource("3_pt2xj")
 
 [node name="CharacterController" type="CharacterBody2D" parent="." node_paths=PackedStringArray("Progressar")]
+position = Vector2(934, 521)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_qtxkv")
@@ -189,5 +166,11 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterController/Scythe/Area2D"]
 shape = SubResource("CapsuleShape2D_mhkm5")
+
+[node name="Dash" type="Node2D" parent="CharacterController"]
+script = ExtResource("4_u0rky")
+
+[node name="Timer" type="Timer" parent="CharacterController/Dash"]
+one_shot = true
 
 [connection signal="body_entered" from="CharacterController/Scythe/Area2D" to="CharacterController" method="_on_area_2d_body_entered"]

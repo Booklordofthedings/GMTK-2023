@@ -1,4 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2bv7iscxtmg2"]
+
+[gd_scene load_steps=9 format=3 uid="uid://d2bv7iscxtmg2"]
 
 [ext_resource type="Script" path="res://Game/MainGame/GameLogic.cs" id="1_yv00e"]
 [ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
@@ -6,6 +7,9 @@
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="5_mja8j"]
 [ext_resource type="PackedScene" uid="uid://cohjnl5ts70fy" path="res://Game/Player/Player.tscn" id="6_g5uo4"]
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
+
+[ext_resource type="AudioStream" uid="uid://chgapvpb4cgal" path="res://Music/Cruising for Goblins.mp3" id="8_j23me"]
+
 [ext_resource type="PackedScene" uid="uid://bpr8chnsyuoln" path="res://Game/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="12_4qu7v"]
 
 [node name="Game" type="Node" node_paths=PackedStringArray("_King", "scoreLabel")]
@@ -52,3 +56,8 @@ text = "Score: 123232"
 process_mode = 3
 
 [node name="King" parent="." instance=ExtResource("8_ehebq")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_j23me")
+volume_db = -40.0
+autoplay = true

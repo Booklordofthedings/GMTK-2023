@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=10 format=3 uid="uid://bi8u30y04btvw"]
+
 
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_gjddb"]
 [ext_resource type="Script" path="res://Menus/PauseMenu/pause_menu.gd" id="1_x8m2o"]
@@ -36,7 +38,7 @@ top_level = true
 layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.631373, 0.611765, 0.584314, 0.784314)
+color = Color(0.631373, 0.611765, 0.584314, 1)
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 show_behind_parent = true
