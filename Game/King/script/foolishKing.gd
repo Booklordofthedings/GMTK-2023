@@ -4,7 +4,11 @@ extends RigidBody2D
 @onready var animations = $AnimationPlayer
 var direction = 1;
 var timer = 0.5;
+var score = int(0);
 
+func _process(delta):
+	score += delta * 10;
+	
 func _physics_process(delta):
 	timer -= delta
 	if(timer < 0):
@@ -23,6 +27,7 @@ func _physics_process(delta):
 		animations.play("walkUp")
 		
 	if(position.x < -10):
+		get_node("/root/Globals").call("SetHighscore", score)
 		get_tree().change_scene_to_file("res://Menus/Death/Death_Menu.tscn")
 	
 

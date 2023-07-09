@@ -17,29 +17,6 @@ shadow_offset = Vector2(20, 20)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvw8j"]
 bg_color = Color(0.259294, 0.259294, 0.259294, 1)
 
-[sub_resource type="CSharpScript" id="CSharpScript_ylx36"]
-script/source = "using Godot;
-using System;
-
-public partial class QuitBtn : Node
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-	private void Onclick()
-	{
-		GetTree().ChangeSceneToFile(\"res://Menus/MainMenu/MainMenu.tscn\");
-	}
-}
-
-"
-
 [node name="PauseMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -152,7 +129,6 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_gvw8j")
 text = "Quit to Menu
 "
-script = SubResource("CSharpScript_ylx36")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_ResumeBtn_pressed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" method="ToggleFullscreen"]
