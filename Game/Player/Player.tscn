@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Game/Player/scripts/Movement.gd" id="1_qtxkv"]
 [ext_resource type="Texture2D" uid="uid://voppdllbhdn" path="res://Game/Player/assets/Dash_Icon.png" id="2_ghk3h"]
 [ext_resource type="Texture2D" uid="uid://dtrlci58skaic" path="res://Game/Player/assets/Death_Sprites-Sheet-Sheet.png" id="2_yhbdj"]
-[ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="3_pt2xj"]
 [ext_resource type="Script" path="res://Game/Player/scripts/Dash.gd" id="4_u0rky"]
+[ext_resource type="Texture2D" uid="uid://dvwx64sdhmu15" path="res://Game/Player/assets/Scythe.png" id="5_3lhyn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtw7i"]
 size = Vector2(66, 110)
@@ -170,8 +170,9 @@ libraries = {
 position = Vector2(101.18, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterController/Scythe"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_pt2xj")
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("5_3lhyn")
 
 [node name="Area2D" type="Area2D" parent="CharacterController/Scythe"]
 collision_layer = 2
