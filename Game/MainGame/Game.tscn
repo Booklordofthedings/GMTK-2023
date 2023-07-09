@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2bv7iscxtmg2"]
 
+[gd_scene load_steps=9 format=3 uid="uid://d2bv7iscxtmg2"]
 [ext_resource type="Script" path="res://Game/MainGame/GameLogic.cs" id="1_yv00e"]
 [ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
 [ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/Background.png" id="2_knxp1"]
-[ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="4_expem"]
+[ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="5_mja8j"]
 [ext_resource type="PackedScene" uid="uid://cohjnl5ts70fy" path="res://Game/Player/Player.tscn" id="6_g5uo4"]
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
+
 [ext_resource type="AudioStream" uid="uid://chgapvpb4cgal" path="res://Music/Cruising for Goblins.mp3" id="8_j23me"]
+
 [ext_resource type="PackedScene" uid="uid://bpr8chnsyuoln" path="res://Game/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="12_4qu7v"]
 
 [node name="Game" type="Node" node_paths=PackedStringArray("_King", "scoreLabel")]
@@ -28,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("5_mja8j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
 layout_mode = 2
@@ -46,7 +49,6 @@ theme_override_constants/margin_bottom = 10
 [node name="ScoreLabel" type="Label" parent="UI/VBoxContainer/TopInfoBar"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("4_expem")
 text = "Score: 123232"
 
 [node name="GUI" parent="." instance=ExtResource("2_ehxwo")]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi8u30y04btvw"]
+[gd_scene load_steps=10 format=3 uid="uid://bi8u30y04btvw"]
 
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_gjddb"]
 [ext_resource type="Script" path="res://Menus/PauseMenu/pause_menu.gd" id="1_x8m2o"]
+[ext_resource type="FontFile" uid="uid://clx6utyipcvql" path="res://Theme/Retro Gaming.ttf" id="3_1fls4"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="3_ucajq"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="5_0uwhj"]
+[ext_resource type="Texture2D" path="res://GUI/Button-n-scaled-2.png" id="5_8lmmk"]
+[ext_resource type="Texture2D" path="res://GUI/Button-h-scaled-2.png" id="6_oewbg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_spi0m"]
 line_spacing = 1.0
@@ -70,9 +73,18 @@ theme_override_constants/margin_top = 150
 show_behind_parent = true
 layout_mode = 2
 
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_1fls4")
 text = "Paused"
 label_settings = SubResource("LabelSettings_spi0m")
 horizontal_alignment = 1
@@ -89,25 +101,62 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 8
 
-[node name="ResumeBtn" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("5_8lmmk")
+texture_pressed = ExtResource("6_oewbg")
+texture_hover = ExtResource("6_oewbg")
+stretch_mode = 3
+
+[node name="Resume" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton"]
+layout_mode = 0
+offset_left = 41.0
+offset_right = 282.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 30
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeBtn" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton"]
+visible = false
+layout_mode = 2
+offset_top = -129.0
+offset_right = 324.0
+offset_bottom = -70.0
 theme_override_font_sizes/font_size = 40
 text = "Resume
 "
 
+
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Volume" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0980392, 0.0980392, 0.0901961, 1)
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 
+
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 visible = false
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Volume"]
 layout_mode = 2
+offset_top = 62.0
+offset_right = 324.0
+offset_bottom = 78.0
 size_flags_vertical = 3
 min_value = -50.0
 max_value = 0.0
+
+[node name="FullscreenBtn" type="CheckButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Fullscreen"
+script = ExtResource("5_0uwhj")
+
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 visible = false
@@ -115,22 +164,39 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
 
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.0976563, 0.0976563, 0.0898438, 1)
-theme_override_font_sizes/font_size = 40
-text = "Fullscreen"
-script = ExtResource("5_0uwhj")
+texture_normal = ExtResource("5_8lmmk")
+texture_pressed = ExtResource("6_oewbg")
+texture_hover = ExtResource("6_oewbg")
+stretch_mode = 3
 
-[node name="End" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Resume" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2"]
+layout_mode = 0
+offset_left = 41.0
+offset_right = 282.0
+offset_bottom = 81.0
+theme_override_constants/line_spacing = -10
+theme_override_font_sizes/font_size = 30
+text = "Quit
+to Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="End" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2"]
+visible = false
 layout_mode = 2
+offset_top = 96.0
+offset_right = 324.0
+offset_bottom = 155.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_gvw8j")
 text = "Quit to Menu
 "
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_ResumeBtn_pressed"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/CheckButton" method="ToggleFullscreen"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/End" to="." method="_on_QuitBtn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_ResumeBtn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton/ResumeBtn" to="." method="_on_ResumeBtn_pressed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/FullscreenBtn" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/FullscreenBtn" method="ToggleFullscreen"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_QuitBtn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2/End" to="." method="_on_QuitBtn_pressed"]
