@@ -13,19 +13,13 @@ public partial class Death_Menu : Control
 	{
 	}
 
-	private void _on_resume_btn_pressed()
+	public void _on_resume_btn_pressed()
 	{
 		GetTree().ChangeSceneToFile("res://Game/MainGame/Game.tscn");
 	}
 	
-	private void _on_end_pressed()
+	public void _on_end_pressed()
 	{
 		GetTree().ChangeSceneToFile("res://Menus/MainMenu/MainMenu.tscn");
 	}
 }
-
-
-
-
-
-

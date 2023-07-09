@@ -17,8 +17,14 @@ public partial class Barrel : RigidBody2D
 		//MoveAndCollide(ToMove * (float)delta);
 		ToRotate.Rotate(-1f * (float)delta);
 	}
-
+	private void _on_body_entered(Node body)
+	{
+		QueueFree();
+	}
 }
+
+
+
 
 
 

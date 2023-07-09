@@ -6,7 +6,7 @@ public partial class MonsterSpawner : Node
 {
 	[Export]
 	public PackedScene Monsters;
-	private float toTime = 0.5f;
+	private float toTime = 4.5f;
 	private float Timer = 0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -20,6 +20,8 @@ public partial class MonsterSpawner : Node
 		Timer -= (float)delta;
 		if(Timer < 0)
 		{
+			toTime = toTime * 0.9f;
+			toTime = Mathf.Clamp(toTime, 0.1f, 5f);
 			AddChild(Monsters.Instantiate());
 			Timer = toTime;
 		}

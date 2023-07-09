@@ -8,10 +8,12 @@
 radius = 7.07107
 
 [node name="Barrel" type="RigidBody2D" node_paths=PackedStringArray("ToRotate")]
-collision_layer = 3
+collision_layer = 2
 collision_mask = 3
 mass = 20.0
 gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
 constant_force = Vector2(-2000, 0)
 script = ExtResource("1_qxdeo")
 ToMove = Vector2(-900, 0)

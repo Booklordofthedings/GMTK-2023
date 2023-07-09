@@ -10,16 +10,13 @@ func _process(delta):
 	score += delta * 10;
 	
 func _physics_process(delta):
-	timer -= delta
-	if(timer < 0):
-			(get_node("CollisionShape2D") as CollisionShape2D).set_deferred("disabled",false)
 	
 	if position.y > 950:
 		direction = -1
 	elif position.y < 50:
 		direction = 1
 	
-	move_and_collide(Vector2(0,direction * delta * 500))
+	move_and_collide(Vector2(4 * (1 - position.x/1050),direction * delta * 500))
 	
 	if direction == 1:
 		animations.play("walkDown")
@@ -34,7 +31,6 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body):
-	(get_node("CollisionShape2D") as CollisionShape2D).set_deferred("disabled",true)
 	direction = direction * -1
-	timer = 0.5
+	move_and_collide(Vector2(-3,0))
 	pass # Replace with function body.
