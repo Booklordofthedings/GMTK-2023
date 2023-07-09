@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cncwwhaipgvvf"]
 
 [ext_resource type="Texture2D" uid="uid://swsassoge30j" path="res://Game/Monsters/Barrel/assets/Barrel.png" id="1_8stf7"]
-[ext_resource type="Script" path="res://Game/Monsters/Barrel/scripts/Barrel.cs" id="1_qxdeo"]
+[ext_resource type="Script" path="res://Game/Monsters/Barrel/scripts/Barrel.gd" id="1_nuile"]
 [ext_resource type="Texture2D" uid="uid://cbcafx7a1ishg" path="res://Game/Monsters/Barrel/assets/Barrel_Shadow.png" id="3_twxmi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ukm3k"]
@@ -14,7 +14,7 @@ gravity_scale = 0.0
 max_contacts_reported = 1
 contact_monitor = true
 constant_force = Vector2(-2000, 0)
-script = ExtResource("1_qxdeo")
+script = ExtResource("1_nuile")
 ToMove = Vector2(-900, 0)
 ToRotate = NodePath("Sprite2D")
 

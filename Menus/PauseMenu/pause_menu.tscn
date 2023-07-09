@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://Menus/PauseMenu/pause_menu.gd" id="1_x8m2o"]
 [ext_resource type="FontFile" uid="uid://clx6utyipcvql" path="res://Theme/Retro Gaming.ttf" id="3_1fls4"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="3_ucajq"]
-[ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="5_0uwhj"]
-[ext_resource type="Texture2D" path="res://GUI/Button-n-scaled-2.png" id="5_8lmmk"]
-[ext_resource type="Texture2D" path="res://GUI/Button-h-scaled-2.png" id="6_oewbg"]
+[ext_resource type="Texture2D" uid="uid://b5dlxo7fdtf1e" path="res://GUI/Button-n-scaled-2.png" id="5_8lmmk"]
+[ext_resource type="Texture2D" uid="uid://gvlu6mhsyb7t" path="res://GUI/Button-h-scaled-2.png" id="6_oewbg"]
+[ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.gd" id="7_yesly"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_spi0m"]
 line_spacing = 1.0
@@ -128,8 +128,9 @@ theme_override_font_sizes/font_size = 40
 text = "Resume
 "
 
-
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="Volume" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
@@ -137,9 +138,6 @@ theme_override_colors/font_color = Color(0.0980392, 0.0980392, 0.0901961, 1)
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 
-
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
-visible = false
 [node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Volume"]
 layout_mode = 2
 offset_top = 62.0
@@ -149,14 +147,17 @@ size_flags_vertical = 3
 min_value = -50.0
 max_value = 0.0
 
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
 [node name="FullscreenBtn" type="CheckButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
-script = ExtResource("5_0uwhj")
-
+script = ExtResource("7_yesly")
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 visible = false
