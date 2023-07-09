@@ -36,4 +36,20 @@ public partial class Globals : Node
 		}
 		return 0;
 	}
+	
+	public void SetMasterVolume(float value)
+	{
+		var masterBus = AudioServer.GetBusIndex("Master");
+		AudioServer.SetBusVolumeDb(masterBus, value);
+
+		if (value <= -80)
+		{
+			AudioServer.SetBusMute(masterBus, true);
+		}
+		else
+		{
+			AudioServer.SetBusMute(masterBus, false);
+		}
+	}
+	
 }

@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://djy1vaskqd7ek"]
+[gd_scene load_steps=13 format=3 uid="uid://djy1vaskqd7ek"]
 
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_n0pae"]
 [ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/Background.png" id="2_jk0fn"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="3_etu17"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="4_4ce7n"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/startGame.cs" id="5_40nk1"]
+[ext_resource type="Script" path="res://Menus/MainMenu/Volume.gd" id="6_1s0ie"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="6_oxkse"]
 [ext_resource type="Script" path="res://Menus/MainMenu/End.gd" id="7_5h5gn"]
 [ext_resource type="Texture2D" uid="uid://c2vddax8hmsy2" path="res://Menus/MainMenu/assets/GMTK-White@2000.png" id="7_m1l7c"]
+[ext_resource type="AudioStream" uid="uid://c0pale5e18dgr" path="res://Music/Visager_-_Royal_Entrance_Loop.mp3" id="9_nf1sh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1im3j"]
 line_spacing = 1.0
@@ -120,6 +122,9 @@ text = "Volume"
 [node name="Volume" type="HSlider" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
 size_flags_vertical = 3
+min_value = -50.0
+max_value = 0.0
+script = ExtResource("6_1s0ie")
 
 [node name="FullscreenToggle" type="CheckButton" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
@@ -156,6 +161,12 @@ grow_vertical = 0
 texture = ExtResource("7_m1l7c")
 expand_mode = 1
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_nf1sh")
+volume_db = -31.986
+autoplay = true
+
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/Start" to="StartOptions/Container/TitleOptions/Containers/Start" method="Onclick"]
+[connection signal="value_changed" from="StartOptions/Container/TitleOptions/Containers/Volume" to="StartOptions/Container/TitleOptions/Containers/Volume" method="_on_value_changed"]
 [connection signal="toggled" from="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" to="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" method="ToggleFullscreen"]
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/End" to="StartOptions/Container/TitleOptions/Containers/End" method="_on_pressed"]

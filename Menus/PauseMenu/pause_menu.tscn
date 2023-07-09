@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Menus/PauseMenu/pause_menu.gd" id="1_x8m2o"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="2_fpwt6"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="3_ucajq"]
+[ext_resource type="Script" path="res://Menus/PauseMenu/HSlider.gd" id="4_d8akg"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="5_0uwhj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_spi0m"]
@@ -105,6 +106,9 @@ text = "Volume"
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+min_value = -50.0
+max_value = 0.0
+script = ExtResource("4_d8akg")
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 visible = false
