@@ -14,8 +14,8 @@ func _process(delta: float):
 	pass
 
 func _on_resume_btn_pressed():
-	get_tree().change_scene("res://Game/MainGame/Game.tscn")
+	get_tree().change_scene_to_file("res://Game/MainGame/Game.tscn")
 
 func _on_end_pressed():
-	get_tree().change_scene("res://Menus/MainMenu/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Menus/MainMenu/MainMenu.tscn")
 
