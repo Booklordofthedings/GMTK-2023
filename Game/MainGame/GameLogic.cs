@@ -40,7 +40,6 @@ public partial class GameLogic : Node
 		AddChild(_MonsterSpawner);
 		AddChild(_Player);
 
-		lifebar.Value = life;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,7 +53,7 @@ public partial class GameLogic : Node
 
 
 		score += (float)delta * 10;
-		scoreLabel.Text = "Score: " + ((int)score).ToString() + "\n" + highscore.ToString() ;
+		scoreLabel.Text = "Score: " + ((int)score).ToString() + "\n" + "Highscore: " + highscore.ToString() ;
 
 	}
 

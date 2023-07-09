@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2bv7iscxtmg2"]
+[gd_scene load_steps=9 format=3 uid="uid://d2bv7iscxtmg2"]
 
 [ext_resource type="Script" path="res://Game/MainGame/GameLogic.cs" id="1_yv00e"]
 [ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
@@ -9,21 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
 [ext_resource type="PackedScene" uid="uid://bpr8chnsyuoln" path="res://Game/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="12_4qu7v"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0tehm"]
-friction = 0.0
-bounce = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3xpg"]
-size = Vector2(20, 1081)
-
-[node name="Game" type="Node" node_paths=PackedStringArray("_King", "scoreLabel", "lifebar")]
+[node name="Game" type="Node" node_paths=PackedStringArray("_King", "scoreLabel")]
 process_mode = 1
 script = ExtResource("1_yv00e")
 MonsterSpawner = ExtResource("12_4qu7v")
 _King = NodePath("King")
 Player = ExtResource("6_g5uo4")
 scoreLabel = NodePath("UI/VBoxContainer/TopInfoBar/ScoreLabel")
-lifebar = NodePath("")
 
 [node name="Floor" type="Sprite2D" parent="."]
 texture = ExtResource("2_knxp1")
@@ -79,12 +71,3 @@ texture_progress = ExtResource("5_w2vum")
 process_mode = 3
 
 [node name="King" parent="." instance=ExtResource("8_ehebq")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-physics_material_override = SubResource("PhysicsMaterial_0tehm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1929, 540.5)
-shape = SubResource("RectangleShape2D_d3xpg")

@@ -20,19 +20,25 @@ public partial class Globals : Node
 
 	public void SetHighscore(int score)
 	{
+		GD.Print(score.ToString());
+		GD.Print(GetHighscore());
 		if(!(GetHighscore() < score))
 			return;
 
-		GD.Print(score.ToString());
 		var toSave = FileAccess.Open("user://highscore.sav", FileAccess.ModeFlags.Write);
 		toSave.StoreLine(score.ToString());
+		toSave.Close();
 	}
 	public int GetHighscore()
 	{
 		if(FileAccess.FileExists("user://highscore.sav"))
 		{
 			var toRead = FileAccess.Open("user://highscore.sav", FileAccess.ModeFlags.Read);
-			return int.Parse(toRead.GetLine());
+			int toReturn = 0;
+			bool res = int.TryParse(toRead.GetLine(),out toReturn);
+			if(res)
+				return toReturn;
+			return toReturn;
 		}
 		return 0;
 	}
