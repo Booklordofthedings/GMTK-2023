@@ -1,5 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://djy1vaskqd7ek"]
-
+[gd_scene load_steps=12 format=3 uid="uid://djy1vaskqd7ek"]
 
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_n0pae"]
 [ext_resource type="Texture2D" uid="uid://g4v6hu0gvh7g" path="res://Menus/MainMenu/Throne_Hall_Background.png" id="2_sg6vt"]
@@ -120,11 +119,11 @@ text = "Volume"
 [node name="Volume" type="HSlider" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("1_n0pae")
 min_value = -50.0
 max_value = 0.0
-script = ExtResource("6_1s0ie")
-theme = ExtResource("1_n0pae")
 step = 5.0
+script = ExtResource("6_1s0ie")
 
 [node name="FullscreenToggle" type="CheckButton" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2

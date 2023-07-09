@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cohjnl5ts70fy"]
+[gd_scene load_steps=12 format=3 uid="uid://cohjnl5ts70fy"]
 
 [ext_resource type="Script" path="res://Game/Player/scripts/Movement.gd" id="1_qtxkv"]
 [ext_resource type="Texture2D" uid="uid://dtrlci58skaic" path="res://Game/Player/assets/Death_Sprites-Sheet-Sheet.png" id="2_yhbdj"]
 [ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="3_pt2xj"]
+[ext_resource type="Script" path="res://Game/Player/Dash.gd" id="4_bcew2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtw7i"]
 size = Vector2(66, 110)
@@ -164,5 +165,11 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterController/Scythe/Area2D"]
 shape = SubResource("CapsuleShape2D_mhkm5")
+
+[node name="Dash" type="Node2D" parent="CharacterController"]
+script = ExtResource("4_bcew2")
+
+[node name="Timer" type="Timer" parent="CharacterController/Dash"]
+one_shot = true
 
 [connection signal="body_entered" from="CharacterController/Scythe/Area2D" to="CharacterController" method="_on_area_2d_body_entered"]

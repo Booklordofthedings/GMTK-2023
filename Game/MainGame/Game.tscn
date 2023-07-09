@@ -1,6 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2bv7iscxtmg2"]
-
-
+[gd_scene load_steps=8 format=3 uid="uid://d2bv7iscxtmg2"]
 
 [ext_resource type="Script" path="res://Game/MainGame/GameLogic.cs" id="1_yv00e"]
 [ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
@@ -8,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="4_expem"]
 [ext_resource type="PackedScene" uid="uid://cohjnl5ts70fy" path="res://Game/Player/Player.tscn" id="6_g5uo4"]
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
-[ext_resource type="AudioStream" uid="uid://wqq2xlx7kqpf" path="res://Music/Midnight_Tale.mp3" id="9_tdi4f"]
 [ext_resource type="PackedScene" uid="uid://bpr8chnsyuoln" path="res://Game/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="12_4qu7v"]
 
 [node name="Game" type="Node" node_paths=PackedStringArray("_King", "scoreLabel")]
