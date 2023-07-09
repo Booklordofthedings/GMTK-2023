@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var normalspeed = 400
 @export var Progressar : TextureProgressBar
+@export var bashbar : TextureProgressBar
+
 @onready var animations = $Animation
 
 var knockback_dir = Vector2()
@@ -11,6 +13,7 @@ var activeTimer = 3;
 
 const dashspeed = 1200
 const dashlength = .1
+var lastDash = 2
 
 @onready var dash = $Dash
 
@@ -18,7 +21,8 @@ func _ready():
 	get_node("Scythe").set_process_mode(PROCESS_MODE_DISABLED)
 
 func get_input():
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and lastDash < 0:
+		lastDash = 2
 		dash.start_dash(dashlength)
 	var speed = dashspeed if dash.is_dashing() else normalspeed
 	
@@ -31,9 +35,10 @@ func _process(_delta):
 		get_node("Scythe").set_process_mode(PROCESS_MODE_ALWAYS)
 		activeTimer = 3
 		
+	lastDash = lastDash - _delta
 	activeTimer = activeTimer - _delta
 	Progressar.value = 4 - activeTimer
-	print(Progressar.value)
+	bashbar.value = 2 - clamp(lastDash,0,2)
 	if activeTimer <= 2.5:
 		get_node("Scythe").set_process_mode(PROCESS_MODE_DISABLED)
 

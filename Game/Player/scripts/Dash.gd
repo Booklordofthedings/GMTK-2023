@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var timer = $Timer
+@onready var timer : Timer = $Timer
+
 
 func start_dash(dur):
 	timer.wait_time = dur

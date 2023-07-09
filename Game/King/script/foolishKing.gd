@@ -13,7 +13,7 @@ func _physics_process(delta):
 	
 	if position.y > 950:
 		direction = -1
-	elif position.y < 50:
+	elif position.y < 100:
 		direction = 1
 	
 	move_and_collide(Vector2(4 * (1 - position.x/1050),direction * delta * 500))

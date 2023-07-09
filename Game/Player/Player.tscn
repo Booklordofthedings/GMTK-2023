@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cohjnl5ts70fy"]
+[gd_scene load_steps=14 format=3 uid="uid://cohjnl5ts70fy"]
 
 [ext_resource type="Texture2D" uid="uid://bkk66gg8hccgo" path="res://Game/Player/assets/AttackSymbol.png" id="1_1ro1o"]
 [ext_resource type="Script" path="res://Game/Player/scripts/Movement.gd" id="1_qtxkv"]
+[ext_resource type="Texture2D" uid="uid://voppdllbhdn" path="res://Game/Player/assets/Dash_Icon.png" id="2_ghk3h"]
 [ext_resource type="Texture2D" uid="uid://dtrlci58skaic" path="res://Game/Player/assets/Death_Sprites-Sheet-Sheet.png" id="2_yhbdj"]
 [ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="3_pt2xj"]
 [ext_resource type="Script" path="res://Game/Player/scripts/Dash.gd" id="4_u0rky"]
@@ -131,12 +132,22 @@ step = 0.01
 fill_mode = 4
 texture_progress = ExtResource("1_1ro1o")
 
-[node name="CharacterController" type="CharacterBody2D" parent="." node_paths=PackedStringArray("Progressar")]
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Control/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+max_value = 2.0
+step = 0.01
+value = 2.0
+fill_mode = 4
+texture_progress = ExtResource("2_ghk3h")
+
+[node name="CharacterController" type="CharacterBody2D" parent="." node_paths=PackedStringArray("Progressar", "bashbar")]
 position = Vector2(934, 521)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_qtxkv")
 Progressar = NodePath("../Control/MarginContainer/HBoxContainer/TextureProgressBar")
+bashbar = NodePath("../Control/MarginContainer/HBoxContainer/TextureProgressBar2")
 
 [node name="Sprite" type="Sprite2D" parent="CharacterController"]
 texture_filter = 1
@@ -172,6 +183,7 @@ shape = SubResource("CapsuleShape2D_mhkm5")
 script = ExtResource("4_u0rky")
 
 [node name="Timer" type="Timer" parent="CharacterController/Dash"]
+wait_time = 2.0
 one_shot = true
 
 [connection signal="body_entered" from="CharacterController/Scythe/Area2D" to="CharacterController" method="_on_area_2d_body_entered"]
