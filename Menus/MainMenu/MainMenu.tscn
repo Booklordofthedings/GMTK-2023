@@ -134,6 +134,7 @@ texture_normal = ExtResource("4_rnpdy")
 texture_pressed = ExtResource("5_phbn4")
 texture_hover = ExtResource("5_phbn4")
 stretch_mode = 3
+script = ExtResource("6_dvc6j")
 
 [node name="Label" type="Label" parent="StartOptions/Container/TitleOptions/Containers/TextureButton"]
 layout_mode = 0
@@ -154,7 +155,6 @@ theme = ExtResource("1_n0pae")
 theme_override_font_sizes/font_size = 40
 text = "Start
 "
-script = ExtResource("6_dvc6j")
 
 [node name="VolumeLabel" type="Label" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
@@ -234,8 +234,7 @@ stream = ExtResource("9_nf1sh")
 volume_db = -31.986
 autoplay = true
 
-[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton" to="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" method="Onclick"]
-[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" to="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" method="_on_pressed"]
+[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton" to="StartOptions/Container/TitleOptions/Containers/TextureButton" method="_on_pressed"]
 [connection signal="toggled" from="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" to="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" method="ToggleFullscreen"]
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton2" to="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" method="_on_pressed"]
 [connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" to="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" method="_on_pressed"]
