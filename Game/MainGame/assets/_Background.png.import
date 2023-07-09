@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkk66gg8hccgo"
-path="res://.godot/imported/Wing_Attack_Symbol.png-f5555b7c1a3b208e4c0d6433d7718ab7.ctex"
+uid="uid://bw1yy51b4q3ko"
+path="res://.godot/imported/_Background.png-214350286602936afddf6949dad77ff1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Player/assets/Wing_Attack_Symbol.png"
-dest_files=["res://.godot/imported/Wing_Attack_Symbol.png-f5555b7c1a3b208e4c0d6433d7718ab7.ctex"]
+source_file="res://Game/MainGame/assets/_Background.png"
+dest_files=["res://.godot/imported/_Background.png-214350286602936afddf6949dad77ff1.ctex"]
 
 [params]
 

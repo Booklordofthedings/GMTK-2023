@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cohjnl5ts70fy"]
 
-[ext_resource type="Texture2D" uid="uid://bkk66gg8hccgo" path="res://Game/Player/assets/Wing_Attack_Symbol.png" id="1_ka7pl"]
+[ext_resource type="Texture2D" uid="uid://bkk66gg8hccgo" path="res://Game/Player/assets/AttackSymbol.png" id="1_1ro1o"]
 [ext_resource type="Script" path="res://Game/Player/scripts/Movement.gd" id="1_qtxkv"]
 [ext_resource type="Texture2D" uid="uid://dtrlci58skaic" path="res://Game/Player/assets/Death_Sprites-Sheet-Sheet.png" id="2_yhbdj"]
 [ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="3_pt2xj"]
@@ -129,7 +129,7 @@ layout_mode = 2
 max_value = 4.0
 step = 0.01
 fill_mode = 4
-texture_progress = ExtResource("1_ka7pl")
+texture_progress = ExtResource("1_1ro1o")
 
 [node name="CharacterController" type="CharacterBody2D" parent="." node_paths=PackedStringArray("Progressar")]
 position = Vector2(934, 521)
