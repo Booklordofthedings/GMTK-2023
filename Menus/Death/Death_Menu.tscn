@@ -1,9 +1,33 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfa5k085rlb7q"]
+[gd_scene load_steps=14 format=3 uid="uid://cfa5k085rlb7q"]
 
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="1_js6em"]
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_jwopy"]
 [ext_resource type="Script" path="res://Menus/Death/Death_Menu.cs" id="1_m2i8s"]
 [ext_resource type="Texture2D" uid="uid://dwh8mr54hyxpk" path="res://Menus/Death/Death_Menu_BG_Animation.png" id="3_l8bqj"]
+[ext_resource type="Texture2D" path="res://GUI/Button-n-scaled-2.png" id="5_4v47q"]
+[ext_resource type="Texture2D" path="res://GUI/Button-h-scaled-2.png" id="6_myxvg"]
+
+[sub_resource type="Animation" id="Animation_nyvfv"]
+resource_name = "BG ANIM"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../AnimationPlayer/TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-960, 0), Vector2(-1920, 0), Vector2(-2880, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rrsnf"]
+_data = {
+"BG ANIM": SubResource("Animation_nyvfv")
+}
 
 [sub_resource type="Animation" id="Animation_y0wj7"]
 resource_name = "new_animation"
@@ -70,9 +94,22 @@ theme = ExtResource("1_jwopy")
 script = ExtResource("1_m2i8s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
+process_mode = 3
+root_node = NodePath("TextureRect2")
+speed_scale = 0.0
+libraries = {
+"": SubResource("AnimationLibrary_rrsnf")
+}
+
+[node name="TextureRect2" type="TextureRect" parent="AnimationPlayer"]
+texture_filter = 1
+offset_right = 7643.0
+offset_bottom = 3291.0
+texture = ExtResource("3_l8bqj")
+stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="AnimationPlayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -80,14 +117,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 1913.0
 offset_bottom = 1125.0
-
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_right = 7643.0
-offset_bottom = 3291.0
-texture = ExtResource("3_l8bqj")
-stretch_mode = 4
+color = Color(0.417969, 0.554688, 0.417969, 1)
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 show_behind_parent = true
@@ -156,21 +186,67 @@ theme_override_constants/margin_right = 180
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_constants/separation = 8
+theme_override_constants/separation = 12
 
-[node name="ResumeBtn" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("5_4v47q")
+texture_pressed = ExtResource("6_myxvg")
+texture_hover = ExtResource("6_myxvg")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 290.0
+offset_bottom = 80.0
+theme_override_constants/line_spacing = -10
+theme_override_font_sizes/font_size = 30
+text = "Long Live
+the King"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeBtn" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton"]
+visible = false
+layout_mode = 2
+offset_top = 8.0
+offset_right = 456.0
+offset_bottom = 67.0
 theme_override_font_sizes/font_size = 40
 text = "Long live the King"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("5_4v47q")
+texture_pressed = ExtResource("6_myxvg")
+texture_hover = ExtResource("6_myxvg")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2"]
+offset_right = 290.0
+offset_bottom = 80.0
+theme_override_constants/line_spacing = -10
+theme_override_font_sizes/font_size = 30
+text = "Back
+to Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2"]
+visible = false
+layout_mode = 2
+offset_top = 8.0
+offset_right = 316.0
+offset_bottom = 67.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_dkxuw")
 text = "Exit to Menu"
 script = SubResource("GDScript_jrft2")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ResumeBtn" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Quit" method="_on_resume_btn_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton/ResumeBtn" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2/Quit" method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2/Quit" to="." method="_on_end_pressed"]
