@@ -6,11 +6,8 @@
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="3_ucajq"]
 [ext_resource type="Texture2D" uid="uid://b5dlxo7fdtf1e" path="res://GUI/Button-n-scaled-2.png" id="5_8lmmk"]
 [ext_resource type="Texture2D" uid="uid://gvlu6mhsyb7t" path="res://GUI/Button-h-scaled-2.png" id="6_oewbg"]
-<<<<<<< HEAD
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.gd" id="7_yesly"]
-=======
-[ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.gd" id="7_nkre6"]
->>>>>>> 0049db6 (fullscreen fix)
+
 
 [sub_resource type="LabelSettings" id="LabelSettings_spi0m"]
 line_spacing = 1.0
@@ -161,11 +158,9 @@ size_flags_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
-<<<<<<< HEAD
 script = ExtResource("7_yesly")
-=======
-script = ExtResource("7_nkre6")
->>>>>>> 0049db6 (fullscreen fix)
+
+
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 visible = false
