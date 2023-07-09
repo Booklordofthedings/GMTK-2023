@@ -1,14 +1,12 @@
-
 [gd_scene load_steps=9 format=3 uid="uid://d2bv7iscxtmg2"]
+
 [ext_resource type="Script" path="res://Game/MainGame/GameLogic.cs" id="1_yv00e"]
 [ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
 [ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/Background.png" id="2_knxp1"]
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="5_mja8j"]
 [ext_resource type="PackedScene" uid="uid://cohjnl5ts70fy" path="res://Game/Player/Player.tscn" id="6_g5uo4"]
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
-
 [ext_resource type="AudioStream" uid="uid://chgapvpb4cgal" path="res://Music/Cruising for Goblins.mp3" id="8_j23me"]
-
 [ext_resource type="PackedScene" uid="uid://bpr8chnsyuoln" path="res://Game/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="12_4qu7v"]
 
 [node name="Game" type="Node" node_paths=PackedStringArray("_King", "scoreLabel")]
@@ -18,10 +16,6 @@ MonsterSpawner = ExtResource("12_4qu7v")
 _King = NodePath("King")
 Player = ExtResource("6_g5uo4")
 scoreLabel = NodePath("UI/VBoxContainer/TopInfoBar/ScoreLabel")
-
-[node name="Floor" type="Sprite2D" parent="."]
-texture = ExtResource("2_knxp1")
-centered = false
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -60,3 +54,22 @@ process_mode = 3
 stream = ExtResource("8_j23me")
 volume_db = -25.946
 autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+z_index = -2
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_knxp1")
