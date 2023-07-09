@@ -11,7 +11,7 @@ func _ready():
 func _process(delta):
 	timer -= delta
 	if(timer < 0):
-		toTime = toTime < 1.5 if toTime * 0.989 else toTime * 0.9
+		toTime = toTime * 0.989 if toTime < 1.5 else toTime * 0.9
 		toTime = clamp(toTime, 0.05, 5)
 		add_child(Monsters.instantiate())
 		timer = toTime
