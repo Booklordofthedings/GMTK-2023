@@ -24,6 +24,7 @@ func _physics_process(delta):
 		animations.play("walkUp")
 		
 	if(position.x < -10):
+		get_node("/root/Globals").score = score
 		get_node("/root/Globals").call("SetHighscore", score)
 		get_tree().change_scene_to_file("res://Menus/Death/Death_Menu.tscn")
 	

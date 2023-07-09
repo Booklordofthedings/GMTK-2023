@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cfa5k085rlb7q"]
+[gd_scene load_steps=11 format=3 uid="uid://cfa5k085rlb7q"]
 
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_jwopy"]
-[ext_resource type="Script" path="res://Menus/Death/Death_Menu.cs" id="1_m2i8s"]
 [ext_resource type="Texture2D" uid="uid://dwh8mr54hyxpk" path="res://Menus/Death/Death_Menu_BG_Animation.png" id="3_l8bqj"]
 [ext_resource type="Texture2D" uid="uid://cxh22354jwgts" path="res://GUI/The King is Dead scaled-3.png" id="4_7djxi"]
-[ext_resource type="Texture2D" path="res://GUI/Button-n-scaled-2.png" id="5_4v47q"]
-[ext_resource type="Script" path="res://Menus/Death/showscore.gd" id="5_qtw6a"]
-[ext_resource type="Texture2D" path="res://GUI/Button-h-scaled-2.png" id="6_myxvg"]
+[ext_resource type="Texture2D" uid="uid://b5dlxo7fdtf1e" path="res://GUI/Button-n-scaled-2.png" id="5_4v47q"]
+[ext_resource type="Script" path="res://Menus/Death/Death_Menu.cs" id="5_qtw6a"]
+[ext_resource type="Texture2D" uid="uid://gvlu6mhsyb7t" path="res://GUI/Button-h-scaled-2.png" id="6_myxvg"]
 
 [sub_resource type="Animation" id="Animation_nyvfv"]
 resource_name = "BG ANIM"
@@ -54,7 +53,7 @@ func _on_resume_btn_pressed():
 	pass # Replace with function body.
 "
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("ToLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,7 +61,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_jwopy")
-script = ExtResource("1_m2i8s")
+script = ExtResource("5_qtw6a")
+ToLabel = NodePath("MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Label")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 3
@@ -149,7 +149,6 @@ theme_override_font_sizes/font_size = 40
 text = "Your highscore is"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_qtw6a")
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -188,6 +187,7 @@ texture_hover = ExtResource("6_myxvg")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/TextureButton2"]
+layout_mode = 0
 offset_left = 169.5
 offset_right = 459.5
 offset_bottom = 80.0

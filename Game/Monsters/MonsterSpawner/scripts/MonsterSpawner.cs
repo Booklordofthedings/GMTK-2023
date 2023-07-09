@@ -20,7 +20,7 @@ public partial class MonsterSpawner : Node
 		Timer -= (float)delta;
 		if(Timer < 0)
 		{
-			toTime = toTime < 1.5f ? toTime * 0.99f : toTime * 0.9f;
+			toTime = toTime < 1.5f ? toTime * 0.989f : toTime * 0.9f;
 			toTime = Mathf.Clamp(toTime, 0.05f, 5f);
 			AddChild(Monsters.Instantiate());
 			Timer = toTime;
