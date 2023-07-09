@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfa5k085rlb7q"]
+[gd_scene load_steps=10 format=3 uid="uid://cfa5k085rlb7q"]
 
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="1_js6em"]
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_jwopy"]
 [ext_resource type="Script" path="res://Menus/Death/Death_Menu.cs" id="1_m2i8s"]
+[ext_resource type="Texture2D" uid="uid://dwh8mr54hyxpk" path="res://Menus/Death/Death_Menu_BG_Animation.png" id="3_l8bqj"]
 
 [sub_resource type="Animation" id="Animation_y0wj7"]
 resource_name = "new_animation"
@@ -69,12 +70,17 @@ theme = ExtResource("1_jwopy")
 script = ExtResource("1_m2i8s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-top_level = true
-layout_mode = 2
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(4, 4)
-color = Color(0.631373, 0.611765, 0.584314, 1)
+layout_mode = 0
+offset_right = 1913.0
+offset_bottom = 1125.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 7643.0
+offset_bottom = 3291.0
+texture = ExtResource("3_l8bqj")
+stretch_mode = 4
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 show_behind_parent = true
