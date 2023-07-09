@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://djy1vaskqd7ek"]
-
+[gd_scene load_steps=14 format=3 uid="uid://djy1vaskqd7ek"]
 
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_n0pae"]
 [ext_resource type="Texture2D" uid="uid://g4v6hu0gvh7g" path="res://Menus/MainMenu/Throne_Hall_Background.png" id="2_sg6vt"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="4_4ce7n"]
+[ext_resource type="Texture2D" path="res://GUI/Button-n-scaled-2.png" id="4_rnpdy"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/startGame.cs" id="5_40nk1"]
+[ext_resource type="Texture2D" path="res://GUI/Button-h-scaled-2.png" id="5_phbn4"]
 [ext_resource type="Script" path="res://Menus/MainMenu/Volume.gd" id="6_1s0ie"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="6_oxkse"]
 [ext_resource type="Script" path="res://Menus/MainMenu/End.gd" id="7_5h5gn"]
@@ -84,6 +85,7 @@ show_behind_parent = true
 layout_mode = 2
 
 [node name="Title" type="Label" parent="StartOptions/Container"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("1_n0pae")
@@ -95,16 +97,48 @@ vertical_alignment = 2
 [node name="TitleOptions" type="MarginContainer" parent="StartOptions/Container"]
 layout_mode = 2
 theme_override_constants/margin_left = 180
-theme_override_constants/margin_top = 40
+theme_override_constants/margin_top = 512
 theme_override_constants/margin_right = 180
+
+[node name="MarginContainer" type="MarginContainer" parent="StartOptions/Container/TitleOptions"]
+layout_mode = 2
+theme_override_constants/margin_left = -12
+theme_override_constants/margin_top = -12
+theme_override_constants/margin_right = -12
+theme_override_constants/margin_bottom = -12
+
+[node name="ColorRect" type="ColorRect" parent="StartOptions/Container/TitleOptions/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.337255, 0.321569, 0.301961, 0.784314)
 
 [node name="Containers" type="VBoxContainer" parent="StartOptions/Container/TitleOptions"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_constants/separation = 8
+theme_override_constants/separation = 20
 
-[node name="Start" type="Button" parent="StartOptions/Container/TitleOptions/Containers"]
+[node name="TextureButton" type="TextureButton" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
+texture_normal = ExtResource("4_rnpdy")
+texture_pressed = ExtResource("5_phbn4")
+texture_hover = ExtResource("5_phbn4")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="StartOptions/Container/TitleOptions/Containers/TextureButton"]
+layout_mode = 0
+offset_right = 326.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 40
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="StartOptions/Container/TitleOptions/Containers/TextureButton"]
+visible = false
+layout_mode = 2
+offset_top = 8.0
+offset_right = 324.0
+offset_bottom = 67.0
 theme = ExtResource("1_n0pae")
 theme_override_font_sizes/font_size = 40
 text = "Start
@@ -117,14 +151,17 @@ theme = ExtResource("1_n0pae")
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 
-[node name="Volume" type="HSlider" parent="StartOptions/Container/TitleOptions/Containers"]
+[node name="Volume" type="HSlider" parent="StartOptions/Container/TitleOptions/Containers/VolumeLabel"]
 layout_mode = 2
+offset_top = 62.0
+offset_right = 324.0
+offset_bottom = 78.0
 size_flags_vertical = 3
+theme = ExtResource("1_n0pae")
 min_value = -50.0
 max_value = 0.0
-script = ExtResource("6_1s0ie")
-theme = ExtResource("1_n0pae")
 step = 5.0
+script = ExtResource("6_1s0ie")
 
 [node name="FullscreenToggle" type="CheckButton" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
@@ -134,8 +171,28 @@ theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
 script = ExtResource("6_oxkse")
 
-[node name="End" type="Button" parent="StartOptions/Container/TitleOptions/Containers"]
+[node name="TextureButton2" type="TextureButton" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
+texture_normal = ExtResource("4_rnpdy")
+texture_pressed = ExtResource("5_phbn4")
+texture_hover = ExtResource("5_phbn4")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="StartOptions/Container/TitleOptions/Containers/TextureButton2"]
+layout_mode = 0
+offset_right = 306.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="End" type="Button" parent="StartOptions/Container/TitleOptions/Containers/TextureButton2"]
+visible = false
+layout_mode = 2
+offset_top = -67.0
+offset_right = 324.0
+offset_bottom = -8.0
 size_flags_vertical = 3
 theme = ExtResource("1_n0pae")
 theme_override_font_sizes/font_size = 40
@@ -166,7 +223,8 @@ stream = ExtResource("9_nf1sh")
 volume_db = -31.986
 autoplay = true
 
-[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/Start" to="StartOptions/Container/TitleOptions/Containers/Start" method="Onclick"]
-[connection signal="value_changed" from="StartOptions/Container/TitleOptions/Containers/Volume" to="StartOptions/Container/TitleOptions/Containers/Volume" method="_on_value_changed"]
+[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton" to="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" method="Onclick"]
+[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" to="StartOptions/Container/TitleOptions/Containers/TextureButton/Start" method="Onclick"]
 [connection signal="toggled" from="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" to="StartOptions/Container/TitleOptions/Containers/FullscreenToggle" method="ToggleFullscreen"]
-[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/End" to="StartOptions/Container/TitleOptions/Containers/End" method="_on_pressed"]
+[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton2" to="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" method="_on_pressed"]
+[connection signal="pressed" from="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" to="StartOptions/Container/TitleOptions/Containers/TextureButton2/End" method="_on_pressed"]

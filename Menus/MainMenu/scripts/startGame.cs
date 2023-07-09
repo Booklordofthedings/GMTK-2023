@@ -18,3 +18,5 @@ public partial class startGame : Node
 		GetTree().ChangeSceneToFile("res://Game/MainGame/Game.tscn");
 	}
 }
+
+

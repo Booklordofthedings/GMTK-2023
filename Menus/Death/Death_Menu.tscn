@@ -69,6 +69,13 @@ grow_vertical = 2
 theme = ExtResource("1_jwopy")
 script = ExtResource("1_m2i8s")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+
+[node name="TextureRect" type="TextureRect" parent="AnimationPlayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1913.0
