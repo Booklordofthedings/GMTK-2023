@@ -17,7 +17,7 @@ public partial class GameLogic : Node
 	[Export]
 	public Label scoreLabel;
 	private float score = 0;
-	
+	private int highscore = 0;
 	[ExportCategory("KingData")]
 	private int life = 10;
 	[Export] TextureProgressBar lifebar;
@@ -25,7 +25,8 @@ public partial class GameLogic : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-
+		
+		highscore = ((int)GetNode("/root/Globals").Call("GetHighscore"));
 		GD.Randomize();
 		if(FileAccess.FileExists("user://savegame.sav"))
 		{
@@ -53,7 +54,7 @@ public partial class GameLogic : Node
 
 
 		score += (float)delta * 10;
-		scoreLabel.Text = "Score: " + ((int)score).ToString();
+		scoreLabel.Text = "Score: " + ((int)score).ToString() + "\n" + highscore.ToString() ;
 
 	}
 
