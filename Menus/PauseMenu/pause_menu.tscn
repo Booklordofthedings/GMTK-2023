@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi8u30y04btvw"]
+[gd_scene load_steps=7 format=3 uid="uid://bi8u30y04btvw"]
 
+[ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_gjddb"]
 [ext_resource type="Script" path="res://Menus/PauseMenu/pause_menu.gd" id="1_x8m2o"]
-[ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="2_fpwt6"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="3_ucajq"]
 [ext_resource type="Script" path="res://Menus/PauseMenu/HSlider.gd" id="4_d8akg"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/fullscreen.cs" id="5_0uwhj"]
@@ -26,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_gjddb")
 script = ExtResource("1_x8m2o")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -91,7 +92,6 @@ theme_override_constants/separation = 8
 
 [node name="ResumeBtn" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_fpwt6")
 theme_override_font_sizes/font_size = 40
 text = "Resume
 "
@@ -99,7 +99,6 @@ text = "Resume
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0980392, 0.0980392, 0.0901961, 1)
-theme_override_fonts/font = ExtResource("2_fpwt6")
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 
@@ -120,7 +119,6 @@ text = "Fullscreen"
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.0976563, 0.0976563, 0.0898438, 1)
-theme_override_fonts/font = ExtResource("2_fpwt6")
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
 script = ExtResource("5_0uwhj")
@@ -128,7 +126,6 @@ script = ExtResource("5_0uwhj")
 [node name="End" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_fpwt6")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_gvw8j")
 text = "Quit to Menu

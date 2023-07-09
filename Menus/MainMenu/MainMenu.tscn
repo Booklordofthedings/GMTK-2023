@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://djy1vaskqd7ek"]
 
+
 [ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_n0pae"]
-[ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/Background.png" id="2_jk0fn"]
-[ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="3_etu17"]
+[ext_resource type="Texture2D" uid="uid://g4v6hu0gvh7g" path="res://Menus/MainMenu/Throne_Hall_Background.png" id="2_sg6vt"]
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="4_4ce7n"]
 [ext_resource type="Script" path="res://Menus/MainMenu/scripts/startGame.cs" id="5_40nk1"]
 [ext_resource type="Script" path="res://Menus/MainMenu/Volume.gd" id="6_1s0ie"]
@@ -34,15 +34,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_n0pae")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_jk0fn")
-expand_mode = 2
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1917.0
+offset_bottom = 1077.0
+texture = ExtResource("2_sg6vt")
 
 [node name="Credits" type="MarginContainer" parent="."]
 show_behind_parent = true
@@ -62,7 +59,6 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("3_etu17")
 theme_override_font_sizes/font_size = 25
 text = "Made by:
 Jannis
@@ -90,6 +86,8 @@ layout_mode = 2
 [node name="Title" type="Label" parent="StartOptions/Container"]
 layout_mode = 2
 size_flags_vertical = 8
+theme = ExtResource("1_n0pae")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Death Game"
 label_settings = SubResource("LabelSettings_1im3j")
 vertical_alignment = 2
@@ -107,7 +105,7 @@ theme_override_constants/separation = 8
 
 [node name="Start" type="Button" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_etu17")
+theme = ExtResource("1_n0pae")
 theme_override_font_sizes/font_size = 40
 text = "Start
 "
@@ -115,7 +113,7 @@ script = ExtResource("5_40nk1")
 
 [node name="VolumeLabel" type="Label" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_etu17")
+theme = ExtResource("1_n0pae")
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 
@@ -125,11 +123,13 @@ size_flags_vertical = 3
 min_value = -50.0
 max_value = 0.0
 script = ExtResource("6_1s0ie")
+theme = ExtResource("1_n0pae")
+step = 5.0
 
 [node name="FullscreenToggle" type="CheckButton" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("3_etu17")
+theme = ExtResource("1_n0pae")
 theme_override_font_sizes/font_size = 40
 text = "Fullscreen"
 script = ExtResource("6_oxkse")
@@ -137,7 +137,7 @@ script = ExtResource("6_oxkse")
 [node name="End" type="Button" parent="StartOptions/Container/TitleOptions/Containers"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_etu17")
+theme = ExtResource("1_n0pae")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_1qbmu")
 text = "Quit

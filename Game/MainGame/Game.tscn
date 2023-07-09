@@ -1,21 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://d2bv7iscxtmg2"]
 
+
+
 [ext_resource type="Script" path="res://Game/MainGame/GameLogic.cs" id="1_yv00e"]
 [ext_resource type="PackedScene" uid="uid://mvxsgdf54h76" path="res://GUI/GUI.tscn" id="2_ehxwo"]
 [ext_resource type="Texture2D" uid="uid://bw1yy51b4q3ko" path="res://Game/MainGame/assets/Background.png" id="2_knxp1"]
 [ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="4_expem"]
-[ext_resource type="Texture2D" uid="uid://b5tcysvrklc4b" path="res://icon.svg" id="5_w2vum"]
 [ext_resource type="PackedScene" uid="uid://cohjnl5ts70fy" path="res://Game/Player/Player.tscn" id="6_g5uo4"]
 [ext_resource type="PackedScene" uid="uid://bx6gg3cuw8vu3" path="res://Game/King/foolish.tscn" id="8_ehebq"]
 [ext_resource type="AudioStream" uid="uid://wqq2xlx7kqpf" path="res://Music/Midnight_Tale.mp3" id="9_tdi4f"]
 [ext_resource type="PackedScene" uid="uid://bpr8chnsyuoln" path="res://Game/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="12_4qu7v"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0tehm"]
-friction = 0.0
-bounce = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3xpg"]
-size = Vector2(20, 1081)
 
 [node name="Game" type="Node" node_paths=PackedStringArray("_King", "scoreLabel")]
 process_mode = 1
@@ -57,39 +51,7 @@ size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("4_expem")
 text = "Score: 123232"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/HBoxContainer"]
-layout_mode = 2
-value = 86.0
-fill_mode = 4
-texture_progress = ExtResource("5_w2vum")
-
 [node name="GUI" parent="." instance=ExtResource("2_ehxwo")]
 process_mode = 3
 
 [node name="King" parent="." instance=ExtResource("8_ehebq")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-physics_material_override = SubResource("PhysicsMaterial_0tehm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1929, 540.5)
-shape = SubResource("RectangleShape2D_d3xpg")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_tdi4f")
-volume_db = -34.668
-autoplay = true

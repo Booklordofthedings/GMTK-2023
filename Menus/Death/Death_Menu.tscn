@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cfa5k085rlb7q"]
 
 [ext_resource type="FontFile" uid="uid://bdi53f017kak5" path="res://Menus/MainMenu/fonts/Geizer.otf" id="1_js6em"]
+[ext_resource type="Theme" uid="uid://b8v47t8vpiix1" path="res://Theme/Default.theme" id="1_jwopy"]
 [ext_resource type="Script" path="res://Menus/Death/Death_Menu.cs" id="1_m2i8s"]
-[ext_resource type="FontFile" uid="uid://csvk0qbn5dl07" path="res://Menus/MainMenu/fonts/Nohemi-Medium.ttf" id="2_dm8dx"]
 
 [sub_resource type="Animation" id="Animation_y0wj7"]
 resource_name = "new_animation"
@@ -65,6 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_jwopy")
 script = ExtResource("1_m2i8s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -145,14 +146,12 @@ theme_override_constants/separation = 8
 
 [node name="ResumeBtn" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_dm8dx")
 theme_override_font_sizes/font_size = 40
 text = "Long live the King"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_dm8dx")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_dkxuw")
 text = "Exit to Menu"
